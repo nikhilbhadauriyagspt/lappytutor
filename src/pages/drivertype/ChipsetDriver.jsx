@@ -27,7 +27,7 @@ const ChipsetDriver = () => {
               The chipset driver is the fundamental software that enables your operating system to communicate with your motherboard's core components. Without it, your CPU, memory, and high-speed data ports cannot function at their full potential.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
                 Learn More
               </Link>
             </div>

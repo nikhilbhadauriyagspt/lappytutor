@@ -26,7 +26,7 @@ const MonitorDriver = () => {
               While many monitors are "Plug and Play," specific monitor drivers (often as INF files) tell the operating system exactly what your display is capable of, from its maximum resolution to its color gamut and supported refresh rates.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
                 Learn More
               </Link>
             </div>

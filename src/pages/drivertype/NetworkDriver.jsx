@@ -27,7 +27,7 @@ const NetworkDriver = () => {
               Network drivers bridge your operating system and your network adapters (Wi-Fi and Ethernet). They manage data packet transmission, ensuring your internet connection is fast, stable, and secure.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
                 Learn More
               </Link>
             </div>

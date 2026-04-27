@@ -27,7 +27,7 @@ const GraphicsDriver = () => {
               Graphics drivers (GPU drivers) translate commands from the OS and applications into instructions for your graphics card. They are critical for everything from basic desktop usage to intensive 3D gaming and video editing.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
                 Learn More
               </Link>
             </div>

@@ -26,7 +26,7 @@ const BIOSDriver = () => {
               BIOS (Basic Input/Output System) or the modern UEFI is the firmware that resides on your motherboard's chip. It is the first software to run when you turn on your PC, initializing all hardware before handing off control to the Operating System.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
                 Learn More
               </Link>
             </div>

@@ -26,7 +26,7 @@ const USBDriver = () => {
               USB (Universal Serial Bus) drivers act as a bridge between your OS and your motherboard's USB controllers. They ensure that every device you plug into your computer is recognized and can exchange data at maximum speed.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
                 Learn More
               </Link>
             </div>

@@ -431,6 +431,7 @@ const AllAboutDrivers = () => {
                 <Link
                   key={index}
                   to={linkPath}
+                  aria-label={`Learn more about ${item.title}`}
                   className={`group relative bg-white rounded-[2rem] p-8 border border-zinc-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] ${theme.border} flex flex-col h-full`}
                 >
                   <div className={`w-14 h-14 rounded-2xl ${theme.iconBg} ${theme.iconText} flex items-center justify-center mb-6 ${theme.iconHover} transition-colors duration-500 shadow-sm ${theme.shadow}`}>

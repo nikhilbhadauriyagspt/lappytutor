@@ -27,7 +27,7 @@ const AudioDriver = () => {
               Audio drivers manage the communication between your system's sound hardware (built-in speakers, sound cards) and your software. They are responsible for processing sound input and output with precision and low latency.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
                 Learn More
               </Link>
             </div>

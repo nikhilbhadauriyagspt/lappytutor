@@ -26,7 +26,7 @@ const ScannerDriver = () => {
               Scanner drivers act as the communication protocol between your computer and your scanning hardware. They manage the image capture process, light source control, and the transmission of raw data to be processed into digital files.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
                 Learn More
               </Link>
             </div>

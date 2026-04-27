@@ -26,7 +26,7 @@ const SecurityDriver = () => {
               Security drivers manage specialized hardware components like Trusted Platform Modules (TPM), fingerprint scanners, and smart card readers. They are the backbone of modern system security and user authentication.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
                 Learn More
               </Link>
             </div>

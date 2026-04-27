@@ -26,7 +26,7 @@ const InputDriver = () => {
               Input drivers manage devices that send data to your computer, such as keyboards, mice, touchpads, and drawing tablets. They are responsible for translating physical interactions into precise digital commands.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
                 Learn More
               </Link>
             </div>

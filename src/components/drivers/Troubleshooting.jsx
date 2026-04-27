@@ -208,11 +208,11 @@ const Troubleshooting = () => {
                   </p>
                 </div>
                 
-                <Link 
+                <Link
                   to="/contact"
+                  aria-label="Learn more about our diagnostic protocols and hardware support"
                   className="group px-10 py-4 bg-zinc-900 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-blue-600 transition-all shadow-xl shadow-zinc-900/10 active:scale-95 flex items-center gap-3 shrink-0"
-                >
-                  Learn More
+                >                  Learn More
                   <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>

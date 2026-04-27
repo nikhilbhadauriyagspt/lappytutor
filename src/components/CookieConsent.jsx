@@ -40,8 +40,8 @@ const CookieConsent = () => {
                 <Cookie size={24} />
               </div>
               <div>
-                <h3 className="text-sm font-black uppercase tracking-widest text-blue-500 mb-1">Privacy Optimization</h3>
-                <p className="text-zinc-400 text-[13px] md:text-sm leading-relaxed max-w-3xl">
+                <h3 className="text-sm font-black uppercase tracking-widest text-blue-400 mb-1">Privacy Optimization</h3>
+                <p className="text-zinc-300 text-[13px] md:text-sm leading-relaxed max-w-3xl">
                   We use cookies to synchronize your experience and analyze our diagnostic traffic. 
                   By continuing to explore, you agree to our 
                   <Link to="/cookie-policy" className="text-white underline hover:text-blue-400 mx-1 transition-colors">Cookie Policy</Link>
@@ -55,7 +55,7 @@ const CookieConsent = () => {
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto shrink-0">
               <div className="flex items-center gap-2 mr-4 hidden xl:flex">
                 <ShieldCheck size={16} className="text-emerald-500" />
-                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest whitespace-nowrap">SSL Secured & GDPR</span>
+                <span className="text-[10px] font-bold text-zinc-300 uppercase tracking-widest whitespace-nowrap">SSL Secured & GDPR</span>
               </div>
               
               <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -77,7 +77,8 @@ const CookieConsent = () => {
 
               <button 
                 onClick={() => setIsVisible(false)}
-                className="hidden lg:flex w-10 h-10 rounded-full items-center justify-center text-zinc-500 hover:text-white hover:bg-white/5 transition-all"
+                aria-label="Close cookie consent"
+                className="hidden lg:flex w-10 h-10 rounded-full items-center justify-center text-zinc-400 hover:text-white hover:bg-white/5 transition-all"
               >
                 <X size={20} />
               </button>

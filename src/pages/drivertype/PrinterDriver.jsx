@@ -26,7 +26,7 @@ const PrinterDriver = () => {
               Printer drivers are small pieces of software that convert the data you want to print into a format that a specific printer can understand. They act as the essential bridge between your document and the physical output.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
                 Learn More
               </Link>
             </div>

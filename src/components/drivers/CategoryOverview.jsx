@@ -144,10 +144,10 @@ const CategoryOverview = () => {
 
         </div>
 
-        {/* Action Section */}
         <div className="mt-12 md:mt-16 text-center">
           <Link
             to="/contact"
+            aria-label="Contact our specialist team for hardware and driver support"
             className="group relative inline-flex items-center gap-4 px-10 py-4 bg-zinc-900 text-white rounded-[1.5rem]  text-base transition-all hover:bg-blue-600 hover:shadow-[0_20px_40px_-10px_rgba(37,99,235,0.4)] active:scale-95 overflow-hidden"
           >
             <span className="relative z-10 flex items-center gap-2 ">
