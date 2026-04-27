@@ -187,17 +187,7 @@ const Footer = () => {
                 </a>
               </div>
 
-              <div className="group">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                    <MapPin size={14} />
-                  </div>
-                  <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Location</span>
-                </div>
-                <span className="text-zinc-300 font-bold text-sm leading-relaxed">
-                  130 S Fillmore St, Corinth, MS 38834
-                </span>
-              </div>
+              
             </div>
           </div>
         </div>

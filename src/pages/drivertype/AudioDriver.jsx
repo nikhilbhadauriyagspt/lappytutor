@@ -28,7 +28,7 @@ const AudioDriver = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all">
-                Fix Audio Issues
+                Learn More
               </Link>
             </div>
           </div>

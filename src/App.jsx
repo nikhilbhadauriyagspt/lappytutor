@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import CookieConsent from './components/CookieConsent';
 
 // Pages
 const Home = lazy(() => import('./pages/Home'));
@@ -82,6 +83,7 @@ function App() {
           </Suspense>
         </main>
         <Footer />
+        <CookieConsent />
       </div>
     </Router>
   );

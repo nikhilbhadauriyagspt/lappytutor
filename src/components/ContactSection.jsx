@@ -96,7 +96,7 @@ const ContactSection = () => {
             <div className="grid gap-4 sm:grid-cols-1 mb-12">
               {[
                 { label: 'Email Address', value: 'info@getyourdriver.shop', icon: Mail, type: 'email' },
-                { label: 'Our Office', value: '130 S Fillmore St, Corinth, MS 38834', icon: MapPin, type: 'address' }
+                
               ].map((item, idx) => (
                 <div key={idx} className="group flex items-center gap-6 p-6 bg-white rounded-[2rem] border border-zinc-100 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:border-blue-200">
                   <div className="w-14 h-14 rounded-2xl bg-zinc-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shrink-0">

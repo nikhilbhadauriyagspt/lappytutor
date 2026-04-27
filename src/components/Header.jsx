@@ -248,7 +248,7 @@ const Header = () => {
               to="/contact"
               className="hidden md:block px-8 py-3.5 uppercase bg-blue-600 text-white text-[11px] font-black tracking-widest rounded-full transition-all duration-300 hover:bg-zinc-900 hover:shadow-xl hover:shadow-blue-600/20"
             >
-              Get in Touch
+              Contact Us
             </Link>
             
             <button 

@@ -151,7 +151,7 @@ const CategoryOverview = () => {
             className="group relative inline-flex items-center gap-4 px-10 py-4 bg-zinc-900 text-white rounded-[1.5rem]  text-base transition-all hover:bg-blue-600 hover:shadow-[0_20px_40px_-10px_rgba(37,99,235,0.4)] active:scale-95 overflow-hidden"
           >
             <span className="relative z-10 flex items-center gap-2 ">
-              Consult a Hardware Expert
+              Contact Us
               <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
