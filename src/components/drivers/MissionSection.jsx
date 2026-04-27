@@ -13,7 +13,7 @@ const MissionSection = () => {
           <h2 className="text-3xl md:text-5xl lg:text-5xl font-bold text-zinc-900   mb-10 leading-[0.9]">
             Understanding Your <span className="text-blue-600 italic font-serif">Digital Pulse.</span>
           </h2>
-          <p className="text-zinc-500 text-sm md:text-lg font-medium leading-relaxed  tracking-wide max-w-2xl mx-auto">
+          <p className="text-zinc-600 text-sm md:text-lg font-medium leading-relaxed  tracking-wide max-w-2xl mx-auto">
             Bridging the gap between physical hardware and digital intelligence through precision-engineered software layers.
           </p>
         </div>
@@ -27,8 +27,8 @@ const MissionSection = () => {
               <p className="text-xl md:text-2xl font-bold text-zinc-900 leading-tight  ">
                 Device drivers are the vital translators that move your experience from <span className="text-blue-600">confusion to confidence.</span>
               </p>
-              <div className="space-y-6 text-zinc-500 text-sm md:text-base leading-relaxed font-medium  tracking-wide opacity-80">
-                <p>At ALL ABOUT DRIVERS, we demystify the technical complexity of the hardware ecosystem. Our mission is to ensure every software bridge in your system operates at its absolute peak potential.</p>
+              <div className="space-y-6 text-zinc-600 text-sm md:text-base leading-relaxed font-medium  tracking-wide opacity-80">
+                <p>At Get Your Driver, we demystify the technical complexity of the hardware ecosystem. Our mission is to ensure every software bridge in your system operates at its absolute peak potential.</p>
                 <p>We believe that true technological empowerment starts with understanding the small, silent layers that make your hardware work in perfect harmony.</p>
               </div>
               <div className="flex items-center gap-4 pt-10 border-t border-zinc-100">
@@ -37,7 +37,7 @@ const MissionSection = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[11px] font-black  tracking-widest text-zinc-900">Technical Excellence</span>
-                  <span className="text-[10px] font-bold  tracking-widest text-zinc-400">The Drivers Specialist Team</span>
+                  <span className="text-[10px] font-bold  tracking-widest text-zinc-500">The Drivers Specialist Team</span>
                 </div>
               </div>
             </div>

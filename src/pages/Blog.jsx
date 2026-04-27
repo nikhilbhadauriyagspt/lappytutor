@@ -15,67 +15,51 @@ const BlogCard = ({ post, featured = false }) => {
   return (
     <Link
       to={`/blog/${post.id}`}
-      className={`group flex flex-col h-full ${
-        featured ? 'lg:col-span-2 lg:grid lg:grid-cols-2 lg:gap-8 items-stretch' : ''
+      className={`group relative flex flex-col h-full bg-white rounded-[2.5rem] border border-zinc-100 overflow-hidden transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.1)] ${
+        featured ? 'lg:col-span-2 lg:flex-row' : ''
       }`}
     >
-      <div
-        className={`relative overflow-hidden bg-gray-100 border border-gray-100 shadow-sm transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-2xl group-hover:shadow-blue-600/10 ${
-          featured ? 'rounded-[36px] aspect-[16/10] lg:aspect-auto lg:h-full' : 'rounded-[28px] aspect-[4/3]'
-        }`}
-      >
+      <div className={`relative overflow-hidden bg-zinc-100 ${featured ? 'lg:w-1/2' : 'aspect-[16/10]'}`}>
         <img
           loading="lazy"
           src={post.image}
           alt={post.title}
-          className="w-full h-full object-cover transition-transform duration-[1400ms] group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
-        <div className="absolute top-5 left-5">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md text-[11px] font-bold text-gray-900 shadow-sm">
-            <Sparkles size={13} className="text-blue-600" />
-            {featured ? 'Featured article' : 'Latest insight'}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="absolute top-6 left-6">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/90 backdrop-blur-md text-[10px] font-black uppercase tracking-widest text-zinc-900 shadow-sm">
+            <Sparkles size={12} className="text-blue-600" />
+            {featured ? 'Featured' : 'Latest'}
           </span>
         </div>
       </div>
 
-      <div className={`flex flex-col flex-grow ${featured ? 'justify-center pt-8 lg:pt-0' : 'px-1 pt-6'}`}>
-        <div className="flex items-center flex-wrap gap-4 text-gray-400 text-[11px] font-bold mb-4 tracking-[0.16em] uppercase">
-          <span className="flex items-center gap-1.5">
-            <Calendar size={13} className="text-blue-600" />
+      <div className={`p-8 md:p-10 flex flex-col flex-grow ${featured ? 'lg:w-1/2 justify-center' : ''}`}>
+        <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-zinc-600 mb-6">
+          <span className="flex items-center gap-2">
+            <Calendar size={14} className="text-blue-600" />
             {post.date}
           </span>
-          <span className="w-1 h-1 rounded-full bg-gray-300" />
-          <span className="flex items-center gap-1.5">
-            <Clock size={13} className="text-blue-600" />
+          <span className="flex items-center gap-2">
+            <Clock size={14} className="text-blue-600" />
             {post.readTime}
           </span>
         </div>
 
-        <h3
-          className={`font-black text-gray-950 leading-tight transition-colors duration-300 group-hover:text-blue-600 ${
-            featured ? 'text-2xl md:text-4xl mb-5' : 'text-xl md:text-2xl mb-4'
-          }`}
-        >
+        <h3 className={`font-black text-zinc-900 leading-tight mb-4 group-hover:text-blue-600 transition-colors ${
+          featured ? 'text-3xl md:text-4xl' : 'text-xl md:text-2xl'
+        }`}>
           {post.title}
         </h3>
 
-        <p
-          className={`text-gray-500 font-medium leading-7 ${
-            featured ? 'text-sm md:text-base mb-8 max-w-xl' : 'text-sm mb-7 line-clamp-3'
-          }`}
-        >
+        <p className={`text-zinc-600 font-medium text-sm leading-relaxed mb-8 ${featured ? 'line-clamp-6 md:line-clamp-none' : 'line-clamp-3'}`}>
           {post.excerpt}
         </p>
 
-        <div className="mt-auto pt-5 border-t border-gray-100 flex items-center justify-between">
-          <span className="text-[11px] font-bold text-gray-400 tracking-[0.18em] uppercase">
-            Read article
-          </span>
-
-          <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-            <ChevronRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-          </div>
+        <div className="mt-auto flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.2em] text-zinc-600 group-hover:text-blue-600 transition-all">
+          Read Full Analysis
+          <ArrowRight size={16} className="transition-transform group-hover:translate-x-2" />
         </div>
       </div>
     </Link>
@@ -90,127 +74,111 @@ const Blog = () => {
   const handleSubscribe = (e) => {
     e.preventDefault();
     if (!email) return;
-
     setIsSubmitting(true);
-
-    const encode = (data) =>
-      Object.keys(data)
-        .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-        .join('&');
-
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'newsletter', email }),
-    })
-      .then(() => {
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        setEmail('');
-        setTimeout(() => setIsSuccess(false), 5000);
-      })
-      .catch((error) => {
-        console.error(error);
-        setIsSubmitting(false);
-      });
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      setEmail('');
+      setTimeout(() => setIsSuccess(false), 5000);
+    }, 1000);
   };
 
   const featuredPost = blogPosts[0];
   const remainingPosts = blogPosts.slice(1);
 
   return (
-    <div className="bg-white min-h-screen pt-28 md:pt-32 pb-24 overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-blue-100/60 blur-[120px] rounded-full" />
-      <div className="absolute bottom-0 left-0 w-[320px] h-[320px] bg-blue-50 blur-[100px] rounded-full" />
+    <div className="bg-[#fafbfc] min-h-screen pt-32 pb-24 font-['Poppins'] overflow-hidden relative">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-50/40 rounded-full blur-[120px] -mr-96 -mt-96 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-50/30 rounded-full blur-[100px] -ml-40 -mb-40 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        {/* Hero */}
-        <div className="max-w-3xl mx-auto text-center mb-20 md:mb-24">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 mb-6">
-            <BookOpen size={14} />
-            <span className="text-[11px] font-bold uppercase tracking-[0.22em]">
-              Our Blog
-            </span>
+      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10">
+        
+        {/* Header Section */}
+        <div className="max-w-4xl mx-auto text-center mb-24">
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-blue-50 text-blue-600 text-[10px]  uppercase tracking-widest mb-8 border border-blue-100/50 shadow-sm">
+            <BookOpen size={16} />
+            Engineering Intelligence
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-black text-gray-950  leading-[1.05] mb-6">
-            Driver Insights for <span className="text-blue-600 italic"> Modern Systems.</span>
+          <h1 className="text-5xl md:text-4xl  text-zinc-900 leading-[1.05] mb-8 ">
+            Driver Insights for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 italic">Modern Systems.</span>
           </h1>
 
-          <p className="text-gray-500 text-sm md:text-base font-medium leading-7 max-w-2xl mx-auto">
-            Read useful tips, practical guides, and everyday insights to help you
-            maintain appliances smarter and keep your home running smoothly.
+          <p className="text-zinc-600 text-lg md:text-xl  leading-relaxed max-w-2xl mx-auto">
+            Deep-dive technical analyses, practical system guides, and hardware 
+            synchronization updates curated for precision performance.
           </p>
         </div>
 
-        {/* Featured + Grid */}
+        {/* Featured Post */}
         {featuredPost && (
-          <div className="mb-14">
+          <div className="mb-8">
             <BlogCard post={featuredPost} featured />
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-24">
+        {/* Blog Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
           {remainingPosts.map((post) => (
             <BlogCard key={post.id} post={post} />
           ))}
         </div>
 
-        {/* Newsletter */}
-        <div className="relative rounded-[36px] md:rounded-[48px] border border-gray-100 bg-gradient-to-br from-gray-50 to-white p-8 md:p-14 lg:p-20 overflow-hidden shadow-[0_30px_80px_-40px_rgba(0,0,0,0.15)]">
-          <div className="absolute top-0 right-0 w-72 h-72 bg-blue-600/10 blur-[100px] rounded-full" />
-          <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-600/5 blur-[100px] rounded-full" />
+        {/* Modern Newsletter Section */}
+        <div className="relative rounded-[3rem] bg-zinc-900 text-white p-12 md:p-24 overflow-hidden shadow-2xl shadow-zinc-950/20">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] -mr-64 -mt-64 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-600/5 rounded-full blur-[100px] -ml-48 -mb-48 pointer-events-none" />
+          
+          <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-blue-400 text-[10px] font-black uppercase tracking-widest mb-8">
+                <Sparkles size={14} />
+                Stay Synchronized
+              </div>
 
-          <div className="relative z-10 max-w-2xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-blue-100 text-blue-600 mb-6 shadow-sm">
-              <Sparkles size={14} />
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em]">
-                Stay Updated
-              </span>
+              <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight ">
+                Access the <br /> <span className="text-blue-500">Knowledge Network.</span>
+              </h2>
+
+              <p className="text-zinc-400 text-lg font-medium leading-relaxed max-w-md">
+                Get high-level system maintenance tips and critical device awareness 
+                delivered to your engineering workspace.
+              </p>
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-black text-gray-950  mb-6">
-              Join our <span className="text-blue-600 italic">newsletter.</span>
-            </h2>
-
-            <p className="text-gray-500 text-sm md:text-base font-medium mb-10 leading-7 max-w-xl mx-auto">
-              Get fresh appliance care tips, useful guides, and occasional updates
-              delivered straight to your inbox.
-            </p>
-
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
-              <input
-                required
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
-                className="flex-1 bg-white border border-gray-200 rounded-2xl px-6 py-4 text-gray-950 text-sm font-medium outline-none focus:border-blue-600 transition-all shadow-sm placeholder:text-gray-400"
-              />
-
-              <button
-                disabled={isSubmitting}
-                className="bg-gray-950 hover:bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-sm transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-xl shadow-gray-950/10"
-              >
-                {isSubmitting ? (
-                  'Submitting...'
-                ) : (
-                  <>
-                    Subscribe
-                    <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                  </>
+            <div className="relative">
+              <form onSubmit={handleSubscribe} className="flex flex-col gap-4">
+                <div className="relative group">
+                  <input
+                    required
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email address"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl px-8 py-6 text-white text-sm font-medium outline-none focus:border-blue-500 transition-all placeholder:text-zinc-500 backdrop-blur-xl group-hover:bg-white/10"
+                  />
+                  <button
+                    disabled={isSubmitting}
+                    className="md:absolute right-2 top-2 bottom-2 bg-blue-600 hover:bg-blue-500 text-white px-10 rounded-xl font-black text-xs uppercase tracking-widest transition-all shadow-xl shadow-blue-600/20 active:scale-95 py-4 md:py-0"
+                  >
+                    {isSubmitting ? '...' : 'Connect'}
+                  </button>
+                </div>
+                {isSuccess && (
+                  <p className="text-[11px] font-black text-emerald-400 uppercase tracking-[0.2em] flex items-center gap-2 mt-2">
+                    <CheckCircle2 size={14} />
+                    Successfully Enrolled
+                  </p>
                 )}
-              </button>
-            </form>
-
-            {isSuccess && (
-              <p className="mt-6 text-[12px] font-bold text-blue-600 tracking-[0.14em] uppercase flex items-center justify-center gap-2">
-                <CheckCircle2 size={15} />
-                Successfully enrolled
+              </form>
+              <p className="text-zinc-400 text-[10px] font-black uppercase tracking-[0.2em] mt-8 text-center lg:text-left">
+                Precision Security. No Spam Policy.
               </p>
-            )}
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   );

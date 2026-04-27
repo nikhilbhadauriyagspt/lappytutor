@@ -1,30 +1,49 @@
 import React from 'react';
-import { HelpCircle, ChevronDown, Plus } from 'lucide-react';
+import { HelpCircle, ChevronDown, Plus, MessageCircle, Sparkles, Zap } from 'lucide-react';
 
-const FAQItem = ({ q, a }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+const FAQItem = ({ q, a, index }) => {
+  const [isOpen, setIsOpen] = React.useState(index === 0);
 
   return (
-    <div className={`group border-b border-zinc-100 transition-all duration-500 ${isOpen ? 'bg-zinc-50/50' : 'bg-transparent'}`}>
+    <div className={`group mb-4 overflow-hidden rounded-[2rem] border transition-all duration-500 ${
+      isOpen 
+        ? 'border-blue-200 bg-white shadow-[0_20px_50px_rgba(37,99,235,0.06)]' 
+        : 'border-zinc-100 bg-zinc-50/50 hover:border-blue-100 hover:bg-white'
+    }`}>
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-8 px-4 md:px-8 text-left transition-all"
+        className="w-full flex items-center justify-between py-6 px-8 text-left transition-all"
       >
-        <span className={`text-sm md:text-base font-black   transition-colors duration-300 ${isOpen ? 'text-blue-600' : 'text-zinc-900 group-hover:text-blue-600'}`}>
-          {q}
-        </span>
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 ${isOpen ? 'bg-blue-600 text-white rotate-45' : 'bg-zinc-100 text-zinc-400 group-hover:bg-zinc-900 group-hover:text-white'}`}>
-          <Plus size={16} />
+        <div className="flex items-center gap-4">
+          <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl text-xs font-black transition-all duration-500 ${
+            isOpen ? 'bg-blue-600 text-white' : 'bg-white text-zinc-500 shadow-sm'
+          }`}>
+            {index + 1 < 10 ? `0${index + 1}` : index + 1}
+          </span>
+          <span className={`text-base md:text-lg font-bold transition-colors duration-300 ${
+            isOpen ? 'text-zinc-900' : 'text-zinc-600 group-hover:text-blue-600'
+          }`}>
+            {q}
+          </span>
         </div>
-      </button>
-      <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="px-4 md:px-8 pb-8">
-          <p className="text-zinc-500 text-[13px] md:text-sm leading-relaxed font-medium  tracking-wide opacity-80 max-w-3xl">
-            {a}
-          </p>
+        <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-all duration-500 ${
+          isOpen ? 'bg-blue-50 text-blue-600 rotate-180' : 'bg-white text-zinc-500 shadow-sm group-hover:text-blue-600'
+        }`}>
+          <ChevronDown size={20} strokeWidth={2.5} />
         </div>
-      </div>
-    </div>
+        </button>
+
+        <div className={`grid transition-all duration-500 ease-in-out ${
+        isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+        }`}>
+        <div className="overflow-hidden">
+          <div className="px-8 pb-8 pt-2 ml-12">
+            <p className="text-zinc-600 text-[15px] md:text-base leading-relaxed font-medium max-w-2xl">
+              {a}
+            </p>
+          </div>
+        </div>
+        </div>    </div>
   );
 };
 
@@ -39,25 +58,59 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-white">
-      <div className="w-full px-6 md:px-12 lg:px-20">
-        <div className="max-w-3xl mx-auto text-center mb-20 md:mb-24">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-blue-600 rounded-full mb-6">
-            <HelpCircle size={14} />
-            <span className="text-[12px] font-bold  uppercase">Knowledge Base</span>
+    <section className="py-24 md:py-32 bg-white relative overflow-hidden font-['Poppins']">
+      {/* Abstract background elements */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50/30 rounded-full blur-[120px] -mr-64 -mt-64 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-50/20 rounded-full blur-[100px] -ml-48 -mb-48 pointer-events-none" />
+
+      <div className="w-full px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto relative z-10">
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          
+          {/* Left Side: Title and Info */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
+            <div className="inline-flex items-center gap-3 px-5 py-2 bg-blue-50 text-blue-600 rounded-2xl mb-8 border border-blue-100 shadow-sm">
+              <HelpCircle size={18} strokeWidth={2.5} />
+              <span className="text-[11px]  tracking-[0.2em] uppercase">
+                Knowledge Base
+              </span>
+            </div>
+
+            <h2 className="text-4xl md:text-4xl  text-zinc-900 mb-8 leading-[1.1] ">
+              Frequently Asked <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Questions</span>
+            </h2>
+
+            <p className="text-zinc-600 text-lg md:text-xl  leading-relaxed max-w-md mb-12">
+              Everything you need to know about the software layers that empower your hardware and stabilize your system.
+            </p>
+
+            {/* Support Card */}
+            <div className="relative overflow-hidden rounded-[2.5rem] bg-zinc-900 p-8 text-white shadow-2xl shadow-zinc-900/20">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <MessageCircle size={80} />
+              </div>
+              <div className="relative z-10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-md mb-6">
+                  <Sparkles className="text-blue-400" size={24} />
+                </div>
+                <h3 className="text-xl mb-3 ">Need specific help?</h3>
+                <p className="text-zinc-400 text-sm mb-8 leading-relaxed font-medium">
+                  Our technical specialists are available for deep architecture consultation and troubleshooting.
+                </p>
+               
+              </div>
+            </div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-zinc-900   mb-6">
-            Frequently Asked <span className="text-blue-600">Questions</span>
-          </h2>
-          <p className="text-zinc-500 text-sm md:text-base font-medium leading-relaxed  tracking-wide">
-            Everything you need to know about the software layers that empower your hardware.
-          </p>
-        </div>
-        
-        <div className="max-w-4xl mx-auto border-t border-zinc-100">
-          {faqs.map((faq, i) => (
-            <FAQItem key={i} q={faq.q} a={faq.a} />
-          ))}
+
+          {/* Right Side: Accordion Items */}
+          <div className="lg:col-span-7 pt-4">
+            <div className="space-y-2">
+              {faqs.map((faq, i) => (
+                <FAQItem key={i} index={i} q={faq.q} a={faq.a} />
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

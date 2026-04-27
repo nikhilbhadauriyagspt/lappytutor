@@ -11,6 +11,8 @@ import {
   Volume2,
   HardDrive,
   CheckCircle2,
+  Activity,
+  Zap,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -27,7 +29,7 @@ const About = () => {
   const contentBlocks = [
     {
       title: 'Who We Are',
-      text: 'All About Drivers is an informational website created to help users better understand device drivers, updates, compatibility, and common driver-related topics through simple, clear, and educational content.',
+      text: 'Get Your Driver is an informational website created to help users better understand device drivers, updates, compatibility, and common driver-related topics through simple, clear, and educational content.',
     },
     {
       title: 'What We Do',
@@ -63,252 +65,213 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-[#f7f8fb] min-h-screen pt-28 md:pt-32 pb-20 overflow-hidden">
-      {/* Hero */}
-      <section className="px-6 md:px-12 lg:px-20">
-        <div className="max-w-full mx-auto grid lg:grid-cols-12 gap-14 items-center">
-          {/* Left */}
-          <div className="lg:col-span-6">
-            <p className="text-[13px] uppercase tracking-[0.22em] text-[#c28a2e] font-medium mb-5">
-              About
-            </p>
+    <div className="bg-[#fafbfc] min-h-screen pt-28 pb-20 font-['Poppins'] overflow-hidden relative">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-50/40 rounded-full blur-[120px] -mr-96 -mt-96 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-50/30 rounded-full blur-[100px] -ml-40 -mb-40 pointer-events-none" />
 
-            <h1 className="text-[34px] md:text-[46px] lg:text-[54px] leading-[1.08] font-semibold text-zinc-900 mb-7 tracking-[-0.03em]">
-              What is <span className="font-bold text-blue-600">All About Drivers?</span>
-            </h1>
+      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10">
+        
+        {/* Hero Section */}
+        <section className="mb-20">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[10px]  uppercase mb-6 border border-blue-100/50">
+                Informational Platform
+              </div>
+              
+              <h1 className="text-4xl md:text-3xl lg:text-4xl  text-zinc-900 leading-[1.1] mb-6">
+                What is <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600">Get Your Driver?</span>
+              </h1>
 
-            <div className="space-y-5 text-zinc-600 text-[15px] md:text-[17px] leading-8 max-w-2xl">
-              <p>
-                All About Drivers is an informational website dedicated to helping
-                users understand drivers, updates, compatibility, and common
-                device-related topics through simple, clear, and educational content.
-              </p>
-              <p>
-                Our platform is built for readers who want approachable explanations
-                without overly technical language. We focus on awareness, clarity,
-                and structured learning around the software layer that helps devices
-                communicate properly with operating systems.
-              </p>
-            </div>
-
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#3da7f2] text-white text-sm font-medium hover:bg-zinc-900 transition-all"
-              >
-                Contact Us
-                <ArrowRight size={16} />
-              </Link>
-
-              <Link
-                to="/"
-                className="inline-flex items-center gap-2 text-[#3da7f2] text-sm font-medium hover:text-zinc-900 transition-colors"
-              >
-                Back to Home
-                <ChevronRight size={16} />
-              </Link>
-            </div>
-          </div>
-
-          {/* Right */}
-          <div className="lg:col-span-6">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 max-w-[520px] mx-auto">
-              {topics.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={i}
-                    className="aspect-square rounded-full border-2 border-[#7b61ff]/70 bg-white flex flex-col items-center justify-center text-center p-5 shadow-sm"
-                  >
-                    <div className="w-14 h-14 rounded-full border border-[#3da7f2]/30 flex items-center justify-center text-[#4c74ff] mb-3">
-                      <Icon size={24} strokeWidth={1.8} />
-                    </div>
-                    <p className="text-[13px] md:text-[14px] font-medium text-zinc-700 leading-5">
-                      {item.title}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Intro Strip */}
-      <section className="px-6 md:px-12 lg:px-20 mt-20 md:mt-24">
-        <div className="max-w-full mx-auto rounded-[32px] bg-white border border-zinc-200/70 p-8 md:p-10">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <p className="text-[13px] uppercase tracking-[0.18em] text-[#3da7f2] font-medium mb-3">
-                Informational
-              </p>
-              <h3 className="text-2xl md:text-3xl font-semibold text-zinc-900 leading-tight">
-                Built for clarity, not confusion.
-              </h3>
-            </div>
-
-            <div className="md:col-span-2 text-zinc-600 text-[15px] md:text-[16px] leading-8">
-              We aim to make driver-related content easier to explore by keeping the
-              language readable, the structure organized, and the focus centered on
-              awareness, compatibility, and practical understanding.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4 Blocks */}
-      <section className="px-6 md:px-12 lg:px-20 mt-16">
-        <div className="max-w-full mx-auto grid md:grid-cols-2 gap-6">
-          {contentBlocks.map((item, i) => (
-            <div
-              key={i}
-              className="rounded-[30px] bg-white border border-zinc-200/70 p-7 md:p-9"
-            >
-              <div className="w-12 h-12 rounded-full border border-[#7b61ff]/40 flex items-center justify-center text-[#4c74ff] mb-5">
-                <ShieldCheck size={22} strokeWidth={1.8} />
+              <div className="space-y-5 text-zinc-600 text-base md:text-lg  leading-relaxed max-w-2xl">
+                <p>
+                  Get Your Driver is an informational website dedicated to helping
+                  users understand drivers, updates, compatibility, and common
+                  device-related topics through simple, clear, and educational content.
+                </p>
+                <p>
+                  Our platform is built for readers who want approachable explanations
+                  without overly technical language. We focus on awareness, clarity,
+                  and structured learning.
+                </p>
               </div>
 
-              <h3 className="text-[24px] md:text-[28px] font-semibold text-zinc-900 mb-4 tracking-[-0.02em]">
-                {item.title}
-              </h3>
+              <div className="mt-10 flex flex-wrap items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="group relative px-8 py-3.5 bg-zinc-900 text-white rounded-xl  transition-all hover:bg-blue-600 hover:shadow-[0_15px_30px_-5px_rgba(37,99,235,0.3)] active:scale-95"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    Contact Us
+                    <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
 
-              <p className="text-zinc-600 text-[15px] md:text-[16px] leading-8">
-                {item.text}
-              </p>
+                <Link
+                  to="/"
+                  className="flex items-center gap-2 text-zinc-600 hover:text-zinc-900  text-xs uppercase transition-all"
+                >
+                  Back to Home
+                  <ChevronRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 relative">
+              <div className="grid grid-cols-2 gap-3">
+                {topics.map((item, i) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={i}
+                      className={`group p-6 rounded-2xl border border-zinc-100 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-md ${
+                        i % 3 === 0 ? 'bg-blue-50/20' : ''
+                      }`}
+                    >
+                      <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                        <Icon size={20} strokeWidth={1.5} />
+                      </div>
+                      <p className="text-[13px] font-black text-zinc-900 uppercase">
+                        {item.title}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Bento Grid: Philosophy */}
+        <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
+          <div className="md:col-span-2 lg:col-span-2 p-8 rounded-3xl bg-white border border-zinc-100 shadow-sm flex flex-col justify-center">
+            <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px]  uppercase mb-4">
+              Our Vision
+            </div>
+            <h3 className="text-2xl md:text-3xl  text-zinc-900 mb-4 leading-tight">
+              Built for clarity, not confusion.
+            </h3>
+            <p className="text-zinc-600 text-base font-medium leading-relaxed">
+              We aim to make driver-related content easier to explore by keeping the
+              language readable and the focus centered on awareness.
+            </p>
+          </div>
+
+          {contentBlocks.slice(0, 2).map((item, i) => (
+            <div key={i} className="p-8 rounded-3xl bg-white border border-zinc-100 shadow-sm transition-all hover:border-blue-200">
+              <div className="w-10 h-10 rounded-xl bg-zinc-50 flex items-center justify-center text-blue-600 mb-6">
+                <Zap size={20} strokeWidth={1.5} />
+              </div>
+              <h4 className="text-lg  text-zinc-900 mb-3 uppercase">{item.title}</h4>
+              <p className="text-zinc-600 text-[14px] leading-relaxed ">{item.text}</p>
             </div>
           ))}
-        </div>
-      </section>
+        </section>
 
-      {/* Why Drivers Matter */}
-      <section className="px-6 md:px-12 lg:px-20 mt-16 md:mt-20">
-        <div className="max-w-full mx-auto grid lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-5 rounded-[30px] bg-white border border-zinc-200/70 p-7 md:p-9">
-            <p className="text-[13px] uppercase tracking-[0.18em] text-[#c28a2e] font-medium mb-3">
-              Why Drivers Matter
-            </p>
-
-            <h2 className="text-[28px] md:text-[36px] font-semibold text-zinc-900 leading-[1.15] mb-5 tracking-[-0.03em]">
-              Drivers help systems and hardware work together.
-            </h2>
-
-            <p className="text-zinc-600 text-[15px] md:text-[16px] leading-8">
-              Drivers are a key part of how computers and devices function. They help
-              operating systems communicate with hardware components so devices can
-              perform their intended tasks correctly. Understanding them can help
-              users better recognize compatibility issues, update concerns, and common
-              device behavior.
-            </p>
-          </div>
-
-          <div className="lg:col-span-7 rounded-[30px] bg-white border border-zinc-200/70 p-7 md:p-9">
-            <h3 className="text-[22px] md:text-[28px] font-semibold text-zinc-900 mb-6 tracking-[-0.02em]">
-              Devices commonly connected to driver topics
-            </h3>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {devices.map((item, i) => (
-                <div
-                  key={i}
-                  className="rounded-[20px] bg-[#f7f8fb] border border-zinc-200/60 px-4 py-4 text-[14px] font-medium text-zinc-700 text-center"
-                >
-                  {item}
+        {/* Second Bento Row */}
+        <section className="grid lg:grid-cols-3 gap-5 mb-20">
+          <div className="lg:col-span-2 grid md:grid-cols-2 gap-5">
+            {contentBlocks.slice(2).map((item, i) => (
+              <div key={i} className="p-8 rounded-3xl bg-white border border-zinc-100 shadow-sm transition-all hover:border-blue-200">
+                <div className="w-10 h-10 rounded-xl bg-zinc-50 flex items-center justify-center text-blue-600 mb-6">
+                  <Activity size={20} strokeWidth={1.5} />
                 </div>
-              ))}
-            </div>
+                <h4 className="text-lg  text-zinc-900 mb-3 uppercase">{item.title}</h4>
+                <p className="text-zinc-600 text-[14px] leading-relaxed ">{item.text}</p>
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
-
-      {/* Audience + Promise */}
-      <section className="px-6 md:px-12 lg:px-20 mt-16 md:mt-20">
-        <div className="max-w-full mx-auto grid lg:grid-cols-12 gap-8">
-          <div className="lg:col-span-5 rounded-[30px] bg-[#20242c] text-white p-7 md:p-9">
-            <p className="text-[13px] uppercase tracking-[0.18em] text-[#69bfff] font-medium mb-4">
-              Who It Is For
-            </p>
-
-            <h3 className="text-[26px] md:text-[32px] font-semibold leading-tight mb-6 tracking-[-0.02em]">
-              A helpful platform for everyday readers.
-            </h3>
-
-            <div className="space-y-4">
-              {audience.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 size={15} className="text-[#69bfff]" />
+          
+          <div className="p-8 rounded-3xl bg-zinc-900 text-white shadow-xl overflow-hidden relative group">
+            <div className="absolute top-0 right-0 p-4 opacity-5 rotate-12 transition-transform group-hover:scale-125 duration-700">
+              <Cpu size={100} />
+            </div>
+            <div className="relative z-10">
+              <p className="text-[10px]  uppercase text-blue-400 mb-6">Audience</p>
+              <h3 className="text-xl  mb-6 leading-tight">Who It Is For</h3>
+              <div className="space-y-3">
+                {audience.map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <CheckCircle2 size={14} className="text-blue-500 shrink-0 mt-1" />
+                    <p className="text-zinc-400 text-[13px] font-medium leading-relaxed">{item}</p>
                   </div>
-                  <p className="text-zinc-300 text-[15px] leading-7">{item}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
+        </section>
 
-          <div className="lg:col-span-7 rounded-[30px] bg-white border border-zinc-200/70 p-7 md:p-9">
-            <p className="text-[13px] uppercase tracking-[0.18em] text-[#3da7f2] font-medium mb-4">
-              What Makes Us Different
+        {/* Why Drivers Matter Section */}
+        <section className="mb-20">
+          <div className="rounded-[2.5rem] bg-white border border-zinc-100 p-10 md:p-12 relative overflow-hidden shadow-sm">
+            <div className="grid lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-orange-600 text-[10px] uppercase mb-6 border border-orange-100">
+                  Essential Knowledge
+                </div>
+                <h2 className="text-2xl md:text-3xl  text-zinc-900 leading-tight mb-6">
+                  Why Drivers Matter
+                </h2>
+                <p className="text-zinc-600 text-base font-medium leading-relaxed">
+                  Drivers help systems and hardware work together. They are a key part of how computers function, 
+                  translating commands between the OS and hardware components correctly.
+                </p>
+              </div>
+              
+              <div className="lg:col-span-7">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {devices.map((item, i) => (
+                    <div key={i} className="p-4 rounded-xl bg-zinc-50 border border-zinc-100 text-center transition-all hover:bg-white hover:border-blue-200 group">
+                      <p className="text-[12px] font-bold text-zinc-600 group-hover:text-blue-600 transition-colors">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="text-center bg-[#fafbfc] rounded-[2.5rem] border border-zinc-100 p-12 md:p-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 to-transparent pointer-events-none" />
+          
+          <div className="relative z-10 max-w-4xl mx-auto">
+            <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-blue-600 mx-auto mb-8 border border-zinc-50">
+              <Sparkles size={28} />
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl  text-zinc-900 leading-[1.1] mb-6">
+              Explore driver-related topics <br className="hidden md:block" />
+              with more ease and clarity.
+            </h2>
+            
+            <p className="text-zinc-600 text-base md:text-lg  max-w-2xl mx-auto mb-10">
+              If you would like to connect with us, share feedback, or explore more
+              informational content, visit our contact page.
             </p>
 
-            <h3 className="text-[26px] md:text-[34px] font-semibold text-zinc-900 leading-tight mb-6 tracking-[-0.03em]">
-              We focus on simplicity, structure, and informational value.
-            </h3>
-
-            <div className="space-y-5 text-zinc-600 text-[15px] md:text-[16px] leading-8">
-              <p>
-                All About Drivers is designed to keep information approachable. We
-                avoid unnecessary complexity and explain topics in a more readable,
-                step-by-step way.
-              </p>
-              <p>
-                Instead of making technical topics feel overwhelming, we aim to help
-                readers build awareness and confidence through clear explanations,
-                organized sections, and useful educational content.
-              </p>
-              <p>
-                Our goal is not just to present information, but to make that
-                information easier to understand and more practical for everyday use.
-              </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link
+                to="/contact"
+                className="group px-10 py-3.5 bg-zinc-900 text-white rounded-xl  text-sm uppercase transition-all hover:bg-blue-600 shadow-xl active:scale-95"
+              >
+                Contact Us
+              </Link>
+              
+              <Link
+                to="/"
+                className="px-10 py-3.5 bg-white border border-zinc-200 text-zinc-900 rounded-xl  text-sm uppercase transition-all shadow-sm active:scale-95"
+              >
+                Back to Home
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Bottom CTA */}
-      <section className="px-6 md:px-12 lg:px-20 mt-16 md:mt-20">
-        <div className="max-w-full mx-auto rounded-[34px] bg-white border border-zinc-200/70 p-8 md:p-12 text-center">
-          <p className="text-[13px] uppercase tracking-[0.18em] text-[#c28a2e] font-medium mb-4">
-            All About Drivers
-          </p>
-
-          <h2 className="text-[30px] md:text-[42px] font-semibold text-zinc-900 leading-[1.15] mb-5 tracking-[-0.03em]">
-            Explore driver-related topics <br className="hidden md:block" />
-            with more ease and clarity.
-          </h2>
-
-          <p className="text-zinc-600 text-[15px] md:text-[16px] leading-8 max-w-3xl mx-auto mb-8">
-            If you would like to connect with us, share feedback, or explore more
-            informational content, visit our contact page and stay connected with
-            All About Drivers.
-          </p>
-
-          <div className="flex justify-center gap-4 flex-wrap">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#3da7f2] text-white text-sm font-medium hover:bg-zinc-900 transition-all"
-            >
-              Contact Us
-              <ArrowRight size={16} />
-            </Link>
-
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-zinc-100 text-zinc-900 text-sm font-medium hover:bg-zinc-900 hover:text-white transition-all"
-            >
-              Back to Home
-            </Link>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };

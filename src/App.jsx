@@ -24,6 +24,23 @@ const PageLoader = () => (
   </div>
 );
 
+// Driver Pages
+const ChipsetDriver = lazy(() => import('./pages/drivertype/ChipsetDriver'));
+const GraphicsDriver = lazy(() => import('./pages/drivertype/GraphicsDriver'));
+const AudioDriver = lazy(() => import('./pages/drivertype/AudioDriver'));
+const NetworkDriver = lazy(() => import('./pages/drivertype/NetworkDriver'));
+const StorageDriver = lazy(() => import('./pages/drivertype/StorageDriver'));
+const USBDriver = lazy(() => import('./pages/drivertype/USBDriver'));
+const BluetoothDriver = lazy(() => import('./pages/drivertype/BluetoothDriver'));
+const InputDriver = lazy(() => import('./pages/drivertype/InputDriver'));
+const PrinterDriver = lazy(() => import('./pages/drivertype/PrinterDriver'));
+const ScannerDriver = lazy(() => import('./pages/drivertype/ScannerDriver'));
+const WebcamDriver = lazy(() => import('./pages/drivertype/WebcamDriver'));
+const BIOSDriver = lazy(() => import('./pages/drivertype/BIOSDriver'));
+const SecurityDriver = lazy(() => import('./pages/drivertype/SecurityDriver'));
+const MonitorDriver = lazy(() => import('./pages/drivertype/MonitorDriver'));
+const PowerManagementDriver = lazy(() => import('./pages/drivertype/PowerManagementDriver'));
+
 function App() {
   return (
     <Router>
@@ -38,6 +55,23 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:id" element={<BlogDetail />} />
               <Route path="/contact" element={<Contact />} />
+
+              {/* Driver Routes */}
+              <Route path="/drivers/chipset" element={<ChipsetDriver />} />
+              <Route path="/drivers/graphics" element={<GraphicsDriver />} />
+              <Route path="/drivers/audio" element={<AudioDriver />} />
+              <Route path="/drivers/network" element={<NetworkDriver />} />
+              <Route path="/drivers/storage" element={<StorageDriver />} />
+              <Route path="/drivers/usb" element={<USBDriver />} />
+              <Route path="/drivers/bluetooth" element={<BluetoothDriver />} />
+              <Route path="/drivers/input" element={<InputDriver />} />
+              <Route path="/drivers/printer" element={<PrinterDriver />} />
+              <Route path="/drivers/scanner" element={<ScannerDriver />} />
+              <Route path="/drivers/webcam" element={<WebcamDriver />} />
+              <Route path="/drivers/bios" element={<BIOSDriver />} />
+              <Route path="/drivers/security" element={<SecurityDriver />} />
+              <Route path="/drivers/monitor" element={<MonitorDriver />} />
+              <Route path="/drivers/power-management" element={<PowerManagementDriver />} />
 
               {/* Policy Routes */}
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />

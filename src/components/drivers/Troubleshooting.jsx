@@ -13,176 +13,181 @@ import {
   Cpu,
   Search,
   MonitorSmartphone,
+  Activity,
+  ChevronRight,
+  Radar,
+  Fingerprint
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ProblemCard = ({ title, icon: Icon, desc }) => (
-  <div className="group rounded-[28px] border border-zinc-200 bg-white p-5 md:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_50px_-20px_rgba(37,99,235,0.18)]">
-    <div className="flex items-start gap-4">
-      <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white shrink-0">
-        <Icon size={24} />
+  <div className="group relative overflow-hidden rounded-[2rem] border border-white/40 bg-white/40 backdrop-blur-md p-6 transition-all duration-500 hover:-translate-y-1 hover:bg-white/60 hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:border-blue-200">
+    <div className="flex items-center gap-4 mb-3">
+      <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-blue-600 transition-all duration-500 group-hover:bg-blue-600 group-hover:text-white shrink-0">
+        <Icon size={22} strokeWidth={1.5} />
       </div>
-
-      <div className="min-w-0">
-        <h4 className="text-base md:text-lg font-bold text-zinc-900 mb-1 leading-snug">
-          {title}
-        </h4>
-        <p className="text-sm text-zinc-500 leading-6">
-          {desc}
-        </p>
-      </div>
+      <h4 className="text-lg font-black text-zinc-900 leading-tight">
+        {title}
+      </h4>
     </div>
+    <p className="text-sm text-zinc-600 leading-relaxed font-medium">
+      {desc}
+    </p>
   </div>
 );
 
-const StepCard = ({ id, title, desc, icon: Icon, isLast }) => (
-  <div className="relative flex gap-5">
+const AnalysisStep = ({ id, title, desc, icon: Icon, isLast }) => (
+  <div className="relative flex gap-6 group">
     <div className="relative flex flex-col items-center shrink-0">
-      <div className="w-14 h-14 rounded-2xl bg-zinc-900 text-white flex items-center justify-center shadow-lg shadow-zinc-900/10">
-        <Icon size={22} />
+      <div className="w-14 h-14 rounded-[1.25rem] bg-zinc-900 text-white flex items-center justify-center shadow-xl shadow-zinc-900/20 z-10 transition-transform duration-500 group-hover:scale-110">
+        <Icon size={22} strokeWidth={1.5} />
       </div>
-      {!isLast && <div className="w-px h-full bg-gradient-to-b from-blue-200 via-zinc-200 to-transparent mt-3" />}
+      {!isLast && (
+        <div className="absolute top-14 bottom-0 w-0.5 bg-gradient-to-b from-zinc-900 to-transparent opacity-10 mt-3 group-hover:opacity-20 transition-opacity" />
+      )}
     </div>
 
-    <div className="pb-10">
-      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[11px] font-semibold mb-3">
-        Step {id}
+    <div className="pb-10 pt-1">
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] font-black uppercase tracking-widest mb-3">
+        Stage {id}
       </div>
-      <h3 className="text-lg md:text-xl font-black text-zinc-900 mb-3">
+      <h3 className="text-xl font-black text-zinc-900 mb-2  group-hover:text-blue-600 transition-colors">
         {title}
       </h3>
-      <p className="text-sm md:text-[15px] text-zinc-500 leading-7 max-w-lg">
+      <p className="text-[14px] text-zinc-600 leading-relaxed max-w-md font-medium">
         {desc}
       </p>
     </div>
   </div>
 );
 
-const Troubleshooting = ({ onAction }) => {
+const Troubleshooting = () => {
   const steps = [
     {
       id: '01',
-      title: 'System Architecture Check',
-      desc: 'Identify whether the issue is related to internal laptop hardware, desktop components, or connected external devices before selecting the correct driver path.',
+      title: 'Architecture Audit',
+      desc: 'Deep scan of internal hardware IDs and desktop component pathways to map the exact system environment.',
       icon: Cpu,
     },
     {
       id: '02',
-      title: 'Configuration & Version Sync',
-      desc: 'Verify your operating system version and device compatibility so the selected driver matches the system environment and avoids communication conflicts.',
-      icon: MonitorSmartphone,
+      title: 'OS Sync Validation',
+      desc: 'Comparing kernel version headers with device firmware to ensure zero communication latency or conflicts.',
+      icon: Radar,
     },
     {
       id: '03',
-      title: 'Exact Module Analysis',
-      desc: 'Review hardware IDs and component details to locate the precise manufacturer-specific driver required for stable performance and correct functionality.',
-      icon: Search,
+      title: 'Module Precision Match',
+      desc: 'Retrieving manufacturer-specific driver signatures for peak stable performance and functionality.',
+      icon: Fingerprint,
     },
   ];
 
   const problems = [
     {
-      title: 'Audio Output',
+      title: 'Audio Fidelity',
       icon: Speaker,
-      desc: 'Missing sound, distorted playback, or microphone issues caused by unstable audio drivers.',
+      desc: 'Sound distortion or microphone failure caused by unstable audio buffers.',
     },
     {
-      title: 'Screen Lag',
+      title: 'Display Engine',
       icon: Zap,
-      desc: 'Display stutter, flicker, or poor graphics response linked to outdated display drivers.',
+      desc: 'Visual stutter and refresh rate drops linked to outdated render drivers.',
     },
     {
-      title: 'Wi-Fi Signal',
+      title: 'Network Stack',
       icon: Wifi,
-      desc: 'Weak connection, disconnections, or no wireless access due to network driver issues.',
+      desc: 'Frequent disconnects or high ping due to fragmented wireless protocols.',
     },
     {
-      title: 'Bluetooth Sync',
+      title: 'Sync Protocol',
       icon: Bluetooth,
-      desc: 'Pairing failures, unstable syncing, or wireless accessory communication drops.',
+      desc: 'Unstable accessory pairing and dropouts in high-speed sync modules.',
     },
     {
-      title: 'Printer Latency',
+      title: 'Print Queue',
       icon: Printer,
-      desc: 'Slow print response, queue delays, or printer offline errors during command transfer.',
+      desc: 'Spooler errors and command latency during peripheral handshakes.',
     },
     {
-      title: 'Camera Failure',
+      title: 'Vision Logic',
       icon: Camera,
-      desc: 'Black screen, poor camera detection, or app access issues from webcam driver conflicts.',
+      desc: 'Black screen or low-res video feeds from webcam driver bottlenecks.',
     },
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-white to-zinc-50/70 border-b border-zinc-100">
-      <div className="w-full px-6 md:px-12 lg:px-20">
+    <section className="py-16 md:py-24 bg-[#fafbfc] border-b border-zinc-100 relative overflow-hidden font-['Poppins']">
+      {/* Background Decor */}
+      <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-blue-50/50 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      
+      <div className="w-full px-6 md:px-12 lg:px-24 max-w-full mx-auto relative z-10">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-600 rounded-full mb-5">
-            <Settings size={14} />
-            <span className="text-[11px] font-bold tracking-[0.18em] uppercase">
-              Identification Hub
+        <div className="max-w-4xl mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-3 px-5 py-2 bg-white border border-zinc-200/60 shadow-sm text-blue-700 rounded-2xl mb-6">
+            <Activity size={16} className="animate-pulse" />
+            <span className="text-[11px]  tracking-[0.2em] uppercase">
+              Diagnostic Protocol
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-zinc-900  mb-5 leading-tight">
-            How to <span className="text-blue-600">Identify Driver Needs</span>
+          <h2 className="text-4xl md:text-4xl  text-zinc-900 mb-6 leading-[1.1] ">
+            How to Identify <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Driver Needs</span>
           </h2>
 
-          <p className="text-zinc-500 text-sm md:text-base font-medium leading-7">
-            A cleaner and more reliable way to understand hardware communication issues,
-            compatibility conflicts, and performance bottlenecks before they become bigger problems.
+          <p className="text-zinc-600 text-lg md:text-xl  leading-relaxed max-w-3xl">
+            A precision-engineered approach to resolving hardware communication failures, 
+            identifying bottlenecks before they impact your workflow.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8 xl:gap-12 items-start">
-          {/* Left Steps */}
-          <div className="lg:col-span-5 rounded-[32px] border border-zinc-200 bg-white p-6 md:p-8 xl:p-10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.08)]">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                <CheckCircle2 size={20} />
-              </div>
+        <div className="grid lg:grid-cols-12 gap-12 xl:gap-16 items-start">
+          {/* Left Analysis Pipeline */}
+          <div className="lg:col-span-4 relative">
+            <div className="mb-8">
+              <h3 className="text-xs  text-zinc-600 uppercase tracking-[0.3em] mb-6">
+                The Analysis Pipeline
+              </h3>
               <div>
-                <p className="text-sm font-bold text-zinc-900">3-Step Process</p>
-                <p className="text-xs text-zinc-500">Find the right direction before fixing the issue</p>
+                {steps.map((step, idx) => (
+                  <AnalysisStep
+                    key={step.id}
+                    id={step.id}
+                    title={step.title}
+                    desc={step.desc}
+                    icon={step.icon}
+                    isLast={idx === steps.length - 1}
+                  />
+                ))}
               </div>
-            </div>
-
-            <div>
-              {steps.map((step, idx) => (
-                <StepCard
-                  key={step.id}
-                  id={step.id}
-                  title={step.title}
-                  desc={step.desc}
-                  icon={step.icon}
-                  isLast={idx === steps.length - 1}
-                />
-              ))}
             </div>
           </div>
 
-          {/* Right Problem Area */}
-          <div className="lg:col-span-7 rounded-[32px] border border-zinc-200 bg-zinc-950 p-6 md:p-8 xl:p-10 text-white shadow-[0_25px_80px_-35px_rgba(0,0,0,0.4)] overflow-hidden relative">
-            <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/10 blur-3xl rounded-full" />
-
-            <div className="relative z-10">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+          {/* Right Diagnostic Panel */}
+          <div className="lg:col-span-8">
+            <div className="relative rounded-[2.5rem] border border-zinc-200 bg-white/60 backdrop-blur-xl p-8 md:p-10 shadow-[0_30px_100px_-20px_rgba(0,0,0,0.04)] overflow-hidden">
+              <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600" />
+              
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
                 <div>
-                  <p className="text-blue-400 text-xs font-bold uppercase tracking-[0.22em] mb-2">
-                    Common Issue Signals
-                  </p>
-                  <h3 className="text-2xl md:text-3xl font-black ">
-                    Communication Failures
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                    <p className="text-zinc-600 text-[11px]  uppercase tracking-[0.2em]">
+                      System Health Monitor
+                    </p>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl  text-zinc-900 ">
+                    Critical Error Signals
                   </h3>
                 </div>
 
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-500/10 border border-red-400/20 text-red-300 text-xs font-bold rounded-full">
-                  <ShieldAlert size={14} />
-                  Critical Signals
+                <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-red-50 text-red-700 text-[11px] font-black rounded-2xl border border-red-100 shadow-sm">
+                  <ShieldAlert size={16} />
+                  Action Required
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
+              <div className="grid sm:grid-cols-2 gap-5 relative z-10">
                 {problems.map((item, index) => (
                   <ProblemCard
                     key={index}
@@ -193,13 +198,23 @@ const Troubleshooting = ({ onAction }) => {
                 ))}
               </div>
 
-              <div className="mt-8 md:mt-10 pt-8 border-t border-white/10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                <p className="text-sm text-zinc-300 leading-7 max-w-2xl">
-                  When software bridges fail to connect properly, devices may stop responding,
-                  lose performance, or become unstable across the system.
-                </p>
-
-               
+              <div className="mt-10 pt-8 border-t border-zinc-100 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 shrink-0">
+                    <Search size={20} />
+                  </div>
+                  <p className="text-sm text-zinc-600 font-medium leading-relaxed max-w-sm">
+                    Software bridges require matching signatures to stabilize peripheral handshakes.
+                  </p>
+                </div>
+                
+                <Link 
+                  to="/contact"
+                  className="group px-10 py-4 bg-zinc-900 text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-blue-600 transition-all shadow-xl shadow-zinc-900/10 active:scale-95 flex items-center gap-3 shrink-0"
+                >
+                  Consult an Expert
+                  <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </div>
           </div>

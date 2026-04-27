@@ -6,6 +6,10 @@ import {
   Sparkles,
   CheckCircle2,
   ArrowRight,
+  Globe,
+  Lock,
+  Cpu,
+  Zap,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -45,175 +49,180 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-white pt-20 md:pt-24 pb-12 border-t border-zinc-100">
-      <div className="w-full px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 mb-20">
-          {/* Brand Column */}
-          <div className="lg:col-span-4">
-            <Link to="/" className="inline-flex items-center gap-4 group mb-8">
-              <img
-                src="/logo-rok.png"
-                alt="All About Drivers"
-                className="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+    <footer className="bg-[#09090b] text-white pt-16 pb-8 overflow-hidden relative font-['Poppins']">
+      {/* Success Toast */}
+      <div
+        className={`fixed bottom-8 right-8 z-[100] transition-all duration-500 transform ${
+          isSuccess ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0 pointer-events-none'
+        }`}
+      >
+        <div className="bg-[#18181b] border border-zinc-800 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-4 backdrop-blur-xl">
+          <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-600/20">
+            <CheckCircle2 size={20} />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-sm font-bold">Subscription Active</span>
+            <span className="text-[11px] text-zinc-400">You're now synced with our network.</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Background Ornaments */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-indigo-600/5 rounded-full blur-[100px] translate-y-1/2 pointer-events-none" />
+
+      <div className="w-full px-6 md:px-12 lg:px-15 max-w-full mx-auto relative z-10">
+        
+        {/* Top Section: Brand & Newsletter */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-12 pb-12 border-b border-white/5">
+          <div className="lg:col-span-5">
+            <Link to="/" className="inline-flex items-center gap-3 group mb-6">
+              <img 
+                src="/logo-rok.png" 
+                alt="Get Your Driver" 
+                className="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105 brightness-0 invert" 
               />
             </Link>
-
-            <p className="text-zinc-600 text-[15px] leading-8 max-w-sm mb-8">
-              A clear and approachable destination for understanding device drivers,
-              updates, compatibility, and connected hardware behavior.
+            <p className="text-zinc-400 text-base leading-relaxed max-w-md font-medium">
+              The authoritative destination for understanding device drivers and system architecture.
             </p>
+          </div>
 
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 group">
-                <div className="w-10 h-10 rounded-xl bg-zinc-50 flex items-center justify-center text-blue-600 transition-all group-hover:bg-blue-600 group-hover:text-white">
-                  <Mail size={18} />
+          <div className="lg:col-span-7">
+            <div className="relative rounded-[2rem] bg-white/5 border border-white/10 p-6 md:p-8 backdrop-blur-xl overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-600/20 rounded-full blur-3xl -mr-12 -mt-12 group-hover:bg-blue-600/30 transition-colors duration-700" />
+              
+              <div className="relative z-10 grid md:grid-cols-[1fr_1.5fr] gap-8 items-center">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Zap className="text-blue-500" size={16} />
+                    <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
+                      Stay Synced
+                    </h3>
+                  </div>
+                  <p className="text-zinc-400 text-xs leading-relaxed font-medium">
+                    Architectural insights and driver updates delivered to your inbox.
+                  </p>
                 </div>
-                <a
-                  href="mailto:info@allaboutdrivers.shop"
-                  className="text-[15px] text-zinc-700 hover:text-blue-600 transition-colors"
-                >
-                  info@allaboutdrivers.shop
+
+                <form onSubmit={handleSubscribe} className="relative flex items-center">
+                  <input
+                    required
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email address"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white text-sm font-medium outline-none focus:border-blue-500 transition-all placeholder:text-zinc-500 pr-32"
+                  />
+                  <button
+                    disabled={isSubmitting}
+                    className="absolute right-1.5 top-1.5 bottom-1.5 bg-blue-600 hover:bg-blue-500 text-white px-5 rounded-lg font-black text-[9px] uppercase tracking-widest transition-all disabled:opacity-50 flex items-center gap-2 group/btn"
+                  >
+                    {isSubmitting ? '...' : (
+                      <>
+                        Subscribe
+                        <ArrowRight size={12} className="group-hover/btn:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Middle Section: Links & Contact */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div>
+            <h4 className="text-[10px] font-black text-white uppercase tracking-[0.3em] mb-6">
+              System Core
+            </h4>
+            <ul className="space-y-3">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="text-zinc-400 hover:text-blue-500 font-bold text-[13px] transition-all flex items-center gap-2 group"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-zinc-800 group-hover:bg-blue-500 transition-colors" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-[10px] font-black text-white uppercase tracking-[0.3em] mb-6">
+              Governance
+            </h4>
+            <ul className="space-y-3">
+              {footerLinks.support.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="text-zinc-400 hover:text-blue-500 font-bold text-[13px] transition-all flex items-center gap-2 group"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-2">
+            <h4 className="text-[10px] font-black text-white uppercase tracking-[0.3em] mb-6">
+              Technical Support
+            </h4>
+            <div className="grid sm:grid-cols-2 gap-8">
+              <div className="group">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                    <Mail size={14} />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Email</span>
+                </div>
+                <a href="mailto:info@getyourdriver.shop" className="text-zinc-300 hover:text-white text-sm font-bold transition-colors">
+                  info@getyourdriver.shop
                 </a>
               </div>
 
-              <div className="flex items-center gap-4 group">
-                <div className="w-10 h-10 rounded-xl bg-zinc-50 flex items-center justify-center text-blue-600 transition-all group-hover:bg-blue-600 group-hover:text-white">
-                  <MapPin size={18} />
-                </div>
-                <span className="text-[15px] text-zinc-700">
-                  130 S Fillmore St, Corinth, MS 38834, United States
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Links Grid */}
-          <div className="lg:col-span-3 grid grid-cols-2 gap-10">
-            <div>
-              <h4 className="text-[11px] font-bold text-blue-600 uppercase tracking-[0.22em] mb-6">
-                Navigation
-              </h4>
-
-              <ul className="space-y-4">
-                {footerLinks.company.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      to={link.path}
-                      className="text-zinc-500 hover:text-zinc-900 font-medium text-[14px] transition-all flex items-center gap-2 group"
-                    >
-                      {link.name}
-                      <ArrowUpRight
-                        size={14}
-                        className="opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all"
-                      />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-[11px] font-bold text-blue-600 uppercase tracking-[0.22em] mb-6">
-                Governance
-              </h4>
-
-              <ul className="space-y-4">
-                {footerLinks.support.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      to={link.path}
-                      className="text-zinc-500 hover:text-zinc-900 font-medium text-[14px] transition-all"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Newsletter Column */}
-          <div className="lg:col-span-5">
-            <div className="bg-zinc-50 rounded-[2rem] p-6 md:p-12 border border-zinc-100">
-              <div className="flex flex-col gap-5">
-                <div className="flex items-center gap-2">
-                  <Sparkles size={18} className="text-blue-600" />
-                  <h3 className="text-zinc-900 text-[11px] font-bold uppercase tracking-[0.18em]">
-                    Tech Sync
-                  </h3>
-                </div>
-
-                <div className="grid lg:grid-cols-[1.1fr_1.4fr] gap-5 items-center">
-                  {/* Left Content */}
-                  <div>
-                    <p className="text-zinc-600 text-[14px] leading-7">
-                      Stay updated with simple driver tips, device insights, and useful
-                      tech awareness.
-                    </p>
-
-                    {isSuccess && (
-                      <p className="mt-3 text-[12px] font-medium text-blue-600 flex items-center gap-2">
-                        <CheckCircle2 size={14} />
-                        Subscription Active
-                      </p>
-                    )}
+              <div className="group">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                    <MapPin size={14} />
                   </div>
-
-                  {/* Right Form */}
-                  <form
-                    onSubmit={handleSubscribe}
-                    className="flex flex-col sm:flex-row gap-3 sm:items-center"
-                  >
-                    <input
-                      required
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email"
-                      className="flex-1 bg-white border border-zinc-200 rounded-2xl px-5 py-4 text-zinc-900 text-[14px] font-medium outline-none focus:border-blue-600 transition-all placeholder:text-zinc-400"
-                    />
-
-                    <button
-                      disabled={isSubmitting}
-                      className="shrink-0 bg-zinc-900 hover:bg-blue-600 text-white px-6 py-4 rounded-2xl font-medium text-[14px] transition-all cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2 group/btn shadow-lg shadow-black/5"
-                    >
-                      {isSubmitting ? (
-                        '...'
-                      ) : (
-                        <>
-                          Join Network
-                          <ArrowRight
-                            size={10}
-                            className="group-hover/btn:translate-x-1 transition-transform"
-                          />
-                        </>
-                      )}
-                    </button>
-                  </form>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Location</span>
                 </div>
+                <span className="text-zinc-300 font-bold text-sm leading-relaxed">
+                  130 S Fillmore St, Corinth, MS 38834
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-zinc-100 gap-6">
-          <div className="flex items-center gap-3">
-            <ShieldCheck size={18} className="text-blue-600" />
-            <span className="text-[14px] font-medium text-zinc-700">SSL Secured</span>
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-6">
+           
+            <div className="flex items-center gap-2">
+              <Lock size={12} className="text-blue-500" />
+              <span className="text-[9px] font-black uppercase tracking-widest text-zinc-400">SSL Secured</span>
+            </div>
           </div>
 
           <div className="text-center md:text-right">
-            <p className="text-zinc-400 text-[13px] font-medium">
-              &copy; {currentYear} All About Drivers. Precision Architecture.
+            <p className="text-zinc-400 text-[9px] font-black uppercase tracking-[0.2em]">
+              &copy; {currentYear} GET YOUR DRIVER. All rights reserved.
             </p>
           </div>
         </div>
 
-        {/* Final Disclaimer */}
-        <div className="mt-12 pt-8 border-t border-zinc-50 text-center">
-          <p className="text-zinc-400 text-[11px] font-bold uppercase tracking-widest leading-loose">
-            Disclaimer - For Informational only. No software installation or distribution.
+        {/* Disclaimer */}
+        <div className="mt-8 text-center">
+          <p className="text-zinc-300 text-[8px] font-black uppercase tracking-[0.25em] leading-loose max-w-4xl mx-auto ">
+            For Informational purposes only. We do not distribute software or provide installation files.
           </p>
         </div>
       </div>
