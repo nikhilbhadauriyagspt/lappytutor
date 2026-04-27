@@ -19,7 +19,7 @@ const Disclaimer = () => {
           <h1 className="text-4xl md:text-5xl font-black text-zinc-900 uppercase leading-tight mb-6">
             Disclaimer
           </h1>
-          <p className="text-zinc-400 text-sm font-bold uppercase tracking-widest">Last updated: February 2026</p>
+          <p className="text-zinc-400 text-sm font-bold uppercase tracking-widest">Last updated: April 28, 2026</p>
         </div>
 
         <div className="space-y-12 leading-relaxed text-[15px]">

@@ -104,9 +104,18 @@ const ContactSection = () => {
                   </div>
                   <div className="overflow-hidden">
                     <p className="text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-1.5">{item.label}</p>
-                    <p className="text-base md:text-lg font-bold text-zinc-900 truncate">
-                      {item.value}
-                    </p>
+                    {item.type === 'email' ? (
+                      <a 
+                        href={`mailto:${item.value}`} 
+                        className="text-base md:text-lg font-bold text-zinc-900 truncate hover:text-blue-600 transition-colors block"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-base md:text-lg font-bold text-zinc-900 truncate">
+                        {item.value}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
