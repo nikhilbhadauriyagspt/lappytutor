@@ -26,7 +26,7 @@ const CookiePolicy = () => {
         <div className="space-y-12 leading-relaxed text-[15px]">
           <section className="space-y-6">
             <p>
-              This Cookie Policy explains how <strong>Get Your Driver</strong> (“Company,” “we,” “us,” or “our”) uses cookies and similar tracking technologies when you visit our website <a href="http://getyourdriver.shop/" className="text-blue-600 font-bold hover:underline">http://getyourdriver.shop/</a> (the “Website”). This policy should be read together with our <Link to="/privacy-policy" className="text-blue-600 font-bold hover:underline uppercase">PRIVACY POLICY</Link> and <Link to="/terms-of-service" className="text-blue-600 font-bold hover:underline uppercase">TERMS OF SERVICE</Link>.
+              This Cookie Policy explains how <strong>Lappy Tutor</strong> (“Company,” “we,” “us,” or “our”) uses cookies and similar tracking technologies when you visit our website <a href="http://lappytutor.co/" className="text-blue-600 font-bold hover:underline">http://lappytutor.co/</a> (the “Website”). This policy should be read together with our <Link to="/privacy-policy" className="text-blue-600 font-bold hover:underline uppercase">PRIVACY POLICY</Link> and <Link to="/terms-of-service" className="text-blue-600 font-bold hover:underline uppercase">TERMS OF SERVICE</Link>.
             </p>
           </section>
 
@@ -40,7 +40,7 @@ const CookiePolicy = () => {
 
           <section className="space-y-6">
             <h2 className="text-2xl font-black text-zinc-900 uppercase">2. How We Use Cookies</h2>
-            <p>Get Your Driver uses cookies and similar technologies to:</p>
+            <p>Lappy Tutor uses cookies and similar technologies to:</p>
             <ul className="list-disc pl-10 space-y-4">
               <li>Ensure the Website functions properly</li>
               <li>Maintain security and prevent fraudulent activity</li>
@@ -102,7 +102,7 @@ const CookiePolicy = () => {
           <section className="space-y-6">
             <h2 className="text-2xl font-black text-zinc-900 uppercase">6. Do Not Track Signals</h2>
             <p>
-              Some browsers offer a “Do Not Track” (DNT) feature. At this time, there is no uniform industry standard for recognizing DNT signals, and Get Your Driver does not currently respond to such signals as detailed in our <Link to="/privacy-policy" className="text-blue-600 font-bold hover:underline uppercase">PRIVACY POLICY</Link>.
+              Some browsers offer a “Do Not Track” (DNT) feature. At this time, there is no uniform industry standard for recognizing DNT signals, and Lappy Tutor does not currently respond to such signals as detailed in our <Link to="/privacy-policy" className="text-blue-600 font-bold hover:underline uppercase">PRIVACY POLICY</Link>.
             </p>
           </section>
 
@@ -119,10 +119,10 @@ const CookiePolicy = () => {
               If you have questions or concerns about this Cookie Policy or our use of cookies, you may contact us at:
             </p>
             <p className="text-2xl font-black mb-8">
-              <a href="mailto:info@getyourdriver.shop" className="text-white hover:text-blue-400 transition-colors underline">info@getyourdriver.shop</a>
+              <a href="mailto:info@lappytutor.co" className="text-white hover:text-blue-400 transition-colors underline">info@lappytutor.co</a>
             </p>
             <p className="text-zinc-500 text-[10px] font-black uppercase tracking-[0.2em]">
-              Get Your Driver &bull; User Privacy Division
+              Lappy Tutor &bull; User Privacy Division
             </p>
           </section>
         </div>

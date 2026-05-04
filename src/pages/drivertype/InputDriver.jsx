@@ -1,90 +1,156 @@
 import React from 'react';
-import { Keyboard, Zap, AlertTriangle, CheckCircle2, MousePointer2 } from 'lucide-react';
+import { Keyboard, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const InputDriver = () => {
   const benefits = [
-    { title: "Precision Response", desc: "Reduces latency for mouse movements and key presses." },
-    { title: "Gesture Support", desc: "Enables multi-touch gestures like pinch-to-zoom on touchpads." },
-    { title: "Programmable Keys", desc: "Allows customization of macro keys and special functions." },
-    { title: "Polling Rate", desc: "Optimizes hardware reporting for smoother cursor movement." }
+    {
+      title: 'Smooth Input Response',
+      desc: 'Helps your keyboard and mouse respond correctly to every action.',
+    },
+    {
+      title: 'Touchpad Behavior',
+      desc: 'Supports scrolling, gestures, and basic touchpad movements.',
+    },
+    {
+      title: 'Device Interaction',
+      desc: 'Ensures your system understands input from connected devices.',
+    },
   ];
 
   return (
-    <div className="pt-32 pb-24 bg-white">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 mb-6">
-              <Keyboard size={14} />
-              <span className="text-[11px] font-bold uppercase tracking-widest">Tactile Sync</span>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-black text-zinc-900 leading-[1.1] mb-8">
-              Input <span className="text-blue-600">Drivers</span>
+    <div className="pt-15 bg-white font-['Poppins']">
+
+      {/* HERO */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[620px] border-b border-zinc-100">
+
+        <div className="flex items-center px-6 md:px-12 lg:px-24 py-20">
+          <div className="max-w-[620px]">
+
+            <h1 className="text-[46px] md:text-[64px] font-normal text-[#111827] leading-tight mb-5">
+              Input Drivers
             </h1>
-            <p className="text-lg text-zinc-600 leading-relaxed mb-10">
-              Input drivers manage devices that send data to your computer, such as keyboards, mice, touchpads, and drawing tablets. They are responsible for translating physical interactions into precise digital commands.
+
+            <div className="w-[110px] h-[4px] bg-[#1295ea] mb-7"></div>
+
+            <p className="text-[#5f6b7a] text-[16px] md:text-[18px] leading-8 mb-10">
+              Input drivers help your computer understand actions from devices like
+              keyboards, mice, and touchpads. They support accurate typing, smooth
+              cursor movement, and reliable interaction with your system.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-zinc-900 transition-all" aria-label="Contact our technical specialists for driver support">
-                Learn More
-              </Link>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="aspect-square bg-zinc-50 rounded-[48px] overflow-hidden border border-zinc-100 p-12">
-              <MousePointer2 size={300} className="text-blue-600/10 absolute -bottom-20 -right-20 rotate-12" />
-              <div className="relative z-10 h-full flex flex-col justify-center">
-                <div className="space-y-6">
-                  {benefits.map((b, i) => (
-                    <div key={i} className="flex gap-4 p-6 bg-white rounded-3xl border border-zinc-100 shadow-sm hover:shadow-md transition-shadow">
-                      <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                        <CheckCircle2 size={24} />
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-zinc-900">{b.title}</h3>
-                        <p className="text-sm text-zinc-500">{b.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+
+            <Link
+              to="/contact"
+              className="inline-flex bg-[#1295ea] text-white px-10 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#087ed0] transition"
+            >
+              Learn More
+            </Link>
+
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12 mb-24">
-          <div className="p-10 bg-zinc-900 rounded-[40px] text-white">
-            <h2 className="text-3xl font-bold mb-6">Touchpad Gestures</h2>
-            <p className="text-zinc-400 leading-relaxed">
-              If your laptop's three-finger swipe or scroll isn't working, it's likely a driver issue. Precision drivers (like Synaptics or ELAN) are required for the OS to understand complex multi-touch inputs.
+        {/* RIGHT VISUAL */}
+        <div className="relative bg-[#eaf7ff] min-h-[420px] flex items-center justify-center overflow-hidden">
+          <div className="absolute w-[520px] h-[520px] rounded-full bg-white/70"></div>
+          <Keyboard size={240} strokeWidth={1.2} className="relative z-10 text-[#1295ea]" />
+          <div className="absolute bottom-0 left-0 right-0 h-[7px] bg-[#1295ea]"></div>
+        </div>
+
+      </section>
+
+      {/* BENEFITS */}
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-24 bg-[#f7f7f7]">
+        <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+
+          {benefits.map((item, index) => (
+            <div key={index} className="flex flex-col items-center">
+
+              <div className="w-[116px] h-[116px] rounded-full bg-white border border-zinc-200 flex items-center justify-center text-[#1295ea] mb-7 shadow-sm">
+                <Keyboard size={46} />
+              </div>
+
+              <h2 className="text-[23px] font-normal text-[#111827] mb-4">
+                {item.title}
+              </h2>
+
+              <p className="text-[#4b5563] text-[15px] leading-7 max-w-[340px]">
+                {item.desc}
+              </p>
+
+            </div>
+          ))}
+
+        </div>
+      </section>
+
+      {/* INFO */}
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-24 bg-white">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+          <div className="lg:col-span-1">
+            <h2 className="text-[36px] md:text-[42px] font-normal text-[#111827] mb-4">
+              Why Input Drivers Matter
+            </h2>
+
+            <div className="w-[95px] h-[4px] bg-[#1295ea] mb-6"></div>
+
+            <p className="text-[#5f6b7a] text-[16px] leading-8">
+              Input drivers help your system understand user actions and convert them
+              into commands, making everyday interaction smooth and accurate.
             </p>
           </div>
-          <div className="md:col-span-2 grid sm:grid-cols-2 gap-8">
-            <div className="p-8 border border-zinc-100 rounded-[32px] hover:border-blue-100 transition-colors">
-              <div className="w-14 h-14 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center mb-6">
-                <AlertTriangle size={28} />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Signs of Failure</h3>
-              <ul className="space-y-3 text-zinc-600 text-sm">
-                <li className="flex items-center gap-2">• Unresponsive keys or mouse lag</li>
-                <li className="flex items-center gap-2">• "Ghost" mouse movements</li>
-                <li className="flex items-center gap-2">• Touchpad scroll not working</li>
-                <li className="flex items-center gap-2">• Macro keys being ignored</li>
+
+          <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div className="border border-zinc-100 rounded-[18px] p-8 shadow-sm">
+              <AlertTriangle className="text-[#1295ea] mb-5" size={34} />
+              <h3 className="text-[24px] font-normal mb-4">Common Signs</h3>
+
+              <ul className="space-y-3 text-[#5f6b7a] text-[15px] leading-7">
+                <li>Keyboard keys not responding properly</li>
+                <li>Mouse movement lag or delay</li>
+                <li>Touchpad gestures not working</li>
+                <li>Unexpected input behavior</li>
               </ul>
             </div>
-            <div className="p-8 border border-zinc-100 rounded-[32px] hover:border-blue-100 transition-colors">
-              <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-                <Zap size={28} />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Update Tips</h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                For gaming peripherals, always use the dedicated software (Logitech G Hub, Razer Synapse) as they provide specialized drivers that go beyond basic plug-and-play functionality.
+
+            <div className="border border-zinc-100 rounded-[18px] p-8 shadow-sm">
+              <CheckCircle2 className="text-[#1295ea] mb-5" size={34} />
+              <h3 className="text-[24px] font-normal mb-4">What It Helps With</h3>
+
+              <p className="text-[#5f6b7a] text-[15px] leading-8">
+                Input drivers support typing accuracy, cursor movement, gesture
+                control, and smooth communication between your system and input devices.
               </p>
             </div>
+
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* CTA */}
+      <section className="w-full bg-[#1594ee] py-20 md:py-24 text-center">
+        <div className="max-w-[1100px] mx-auto px-6">
+
+          <h2 className="text-white text-[38px] md:text-[48px] font-light leading-tight mb-6">
+            Learn More About Drivers in a Simple Way
+          </h2>
+
+          <p className="text-white/95 text-[15px] md:text-[17px] leading-8 max-w-[760px] mx-auto mb-10">
+            Explore easy driver information created to help you understand how your
+            computer connects with sound, display, internet, printers, and other devices.
+          </p>
+
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center bg-white text-[#1295ea] px-12 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#f3f8ff] transition"
+          >
+            CONTACT US
+          </Link>
+
+        </div>
+      </section>
+
     </div>
   );
 };

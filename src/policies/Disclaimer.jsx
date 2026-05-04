@@ -26,7 +26,7 @@ const Disclaimer = () => {
           <section className="space-y-6">
             <h2 className="text-2xl font-black text-zinc-900 uppercase">General Disclaimer</h2>
             <p>
-              The information provided by <strong>Get Your Driver</strong> ("we," "us," or "our") on <a href="http://getyourdriver.shop" className="text-blue-600 font-bold hover:underline">http://getyourdriver.shop</a> (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on the Site.
+              The information provided by <strong>Lappy Tutor</strong> ("we," "us," or "our") on <a href="http://lappytutor.co" className="text-blue-600 font-bold hover:underline">http://lappytutor.co</a> (the "Site") is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on the Site.
             </p>
           </section>
 
@@ -50,10 +50,10 @@ const Disclaimer = () => {
               If you require any more information or have any questions about our site's disclaimer, please feel free to contact us by email at:
             </p>
             <p className="text-2xl font-black mb-8">
-              <a href="mailto:info@getyourdriver.shop" className="text-white hover:text-blue-400 transition-colors underline">info@getyourdriver.shop</a>
+              <a href="mailto:info@lappytutor.co" className="text-white hover:text-blue-400 transition-colors underline">info@lappytutor.co</a>
             </p>
             <p className="text-zinc-500 text-[10px] font-black uppercase tracking-[0.2em]">
-              Get Your Driver &bull; Information Compliance Team
+              Lappy Tutor &bull; Information Compliance Team
             </p>
           </section>
         </div>

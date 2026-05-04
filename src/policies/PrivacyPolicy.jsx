@@ -25,15 +25,15 @@ const PrivacyPolicy = () => {
         <div className="space-y-12 leading-relaxed text-[15px]">
           <section className="space-y-6">
             <p>
-              This Privacy Notice for <strong>Get Your Driver</strong> ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:
+              This Privacy Notice for <strong>Lappy Tutor</strong> ("we," "us," or "our"), describes how and why we might access, collect, store, use, and/or share ("process") your personal information when you use our services ("Services"), including when you:
             </p>
             <ul className="list-disc pl-6 space-y-4">
-              <li>Visit our website at <a href="http://getyourdriver.shop/" className="text-blue-600 font-bold hover:underline">http://getyourdriver.shop/</a> or any website of ours that links to this Privacy Notice</li>
-              <li>Use Get Your Driver. At Get Your Driver, we focus on technical accuracy and timely service. Our business is built on providing diagnostic clarity and performing repairs that aim to extend the lifecycle of your hardware components. We serve our clients with a commitment to maintaining standard operating procedures.</li>
+              <li>Visit our website at <a href="http://lappytutor.co/" className="text-blue-600 font-bold hover:underline">http://lappytutor.co/</a> or any website of ours that links to this Privacy Notice</li>
+              <li>Use Lappy Tutor. At Lappy Tutor, we focus on technical accuracy and timely service. Our business is built on providing diagnostic clarity and performing repairs that aim to extend the lifecycle of your hardware components. We serve our clients with a commitment to maintaining standard operating procedures.</li>
               <li>Engage with us in other related ways, including any marketing or events</li>
             </ul>
             <p>
-              Questions or concerns? Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:info@getyourdriver.shop" className="text-blue-600 font-bold hover:underline">info@getyourdriver.shop</a>.
+              Questions or concerns? Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at <a href="mailto:info@lappytutor.co" className="text-blue-600 font-bold hover:underline">info@lappytutor.co</a>.
             </p>
           </section>
 
@@ -163,7 +163,7 @@ const PrivacyPolicy = () => {
             <section id="9" className="space-y-6">
               <h3 className="text-xl font-black text-zinc-900 uppercase border-b border-zinc-100 pb-4">9. WHAT ARE YOUR PRIVACY RIGHTS?</h3>
               <p><em>In Short: Depending on your state of residence in the US or in some regions, such as Canada, you have rights that allow you greater access to and control over your personal information.</em></p>
-              <p>In some regions (like Canada), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making. You can make such a request by contacting us at <a href="mailto:info@getyourdriver.shop" className="text-blue-600 font-bold hover:underline">info@getyourdriver.shop</a>.</p>
+              <p>In some regions (like Canada), you have certain rights under applicable data protection laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii) to request rectification or erasure; (iii) to restrict the processing of your personal information; (iv) if applicable, to data portability; and (v) not to be subject to automated decision-making. You can make such a request by contacting us at <a href="mailto:info@lappytutor.co" className="text-blue-600 font-bold hover:underline">info@lappytutor.co</a>.</p>
             </section>
 
             {/* Section 10 */}
@@ -216,7 +216,7 @@ const PrivacyPolicy = () => {
                 </table>
               </div>
 
-              <p><strong>Your Rights:</strong> You have rights under certain US state data protection laws including the right to know, access, correct, delete, and obtain a copy of your personal data. To exercise these rights, contact us at <a href="mailto:info@getyourdriver.shop" className="text-blue-600 font-bold hover:underline">info@getyourdriver.shop</a>.</p>
+              <p><strong>Your Rights:</strong> You have rights under certain US state data protection laws including the right to know, access, correct, delete, and obtain a copy of your personal data. To exercise these rights, contact us at <a href="mailto:info@lappytutor.co" className="text-blue-600 font-bold hover:underline">info@lappytutor.co</a>.</p>
             </section>
 
             {/* Section 12 */}
@@ -233,10 +233,10 @@ const PrivacyPolicy = () => {
                 If you have questions or comments about this notice, you may email us at:
               </p>
               <p className="text-2xl font-black mb-8">
-                <a href="mailto:info@getyourdriver.shop" className="text-white hover:text-blue-400 transition-colors underline">info@getyourdriver.shop</a>
+                <a href="mailto:info@lappytutor.co" className="text-white hover:text-blue-400 transition-colors underline">info@lappytutor.co</a>
               </p>
               <p className="text-zinc-500 text-[10px] font-black uppercase tracking-[0.2em]">
-                Get Your Driver &bull; Support Intelligence Center
+                Lappy Tutor &bull; Support Intelligence Center
               </p>
             </section>
 

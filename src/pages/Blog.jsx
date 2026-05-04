@@ -47,11 +47,11 @@ const BlogCard = ({ post, featured = false }) => {
           </span>
         </div>
 
-        <h3 className={`font-black text-zinc-900 leading-tight mb-4 group-hover:text-blue-600 transition-colors ${
+        <h2 className={`font-black text-zinc-900 leading-tight mb-4 group-hover:text-blue-600 transition-colors ${
           featured ? 'text-3xl md:text-4xl' : 'text-xl md:text-2xl'
         }`}>
           {post.title}
-        </h3>
+        </h2>
 
         <p className={`text-zinc-600 font-medium text-sm leading-relaxed mb-8 ${featured ? 'line-clamp-6 md:line-clamp-none' : 'line-clamp-3'}`}>
           {post.excerpt}

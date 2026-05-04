@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://getyourdriver.shop/sitemap.xml
+Sitemap: https://lappytutor.co/sitemap.xml
 
 

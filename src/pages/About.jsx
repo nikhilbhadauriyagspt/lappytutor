@@ -1,277 +1,186 @@
 import {
   ArrowRight,
-  ChevronRight,
   Cpu,
-  ShieldCheck,
-  Sparkles,
+  BookOpen,
   Layers,
   Monitor,
   Printer,
   Wifi,
-  Volume2,
-  HardDrive,
+  Target,
+  Eye,
   CheckCircle2,
-  Activity,
-  Zap,
+  FileText,
+  RefreshCw,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const About = () => {
+  const values = [
+    {
+      title: 'Easy Driver Learning',
+      icon: BookOpen,
+      text: 'We explain driver topics in simple language so readers can understand how devices and computers work together.',
+    },
+    {
+      title: 'Clear Information',
+      icon: FileText,
+      text: 'Our content is written to be readable, useful, and focused on driver awareness without unnecessary complexity.',
+    },
+    {
+      title: 'Helpful Topic Coverage',
+      icon: Layers,
+      text: 'We cover driver basics, updates, compatibility, display, sound, network, printer, and device-related topics.',
+    },
+  ];
+
   const topics = [
     { title: 'Driver Basics', icon: Cpu },
-    { title: 'Update Awareness', icon: Sparkles },
+    { title: 'Updates', icon: RefreshCw },
     { title: 'Compatibility', icon: Layers },
-    { title: 'Graphics Devices', icon: Monitor },
-    { title: 'Printer Topics', icon: Printer },
-    { title: 'Network Drivers', icon: Wifi },
-  ];
-
-  const contentBlocks = [
-    {
-      title: 'Who We Are',
-      text: 'Get Your Driver is an informational website created to help users better understand device drivers, updates, compatibility, and common driver-related topics through simple, clear, and educational content.',
-    },
-    {
-      title: 'What We Do',
-      text: 'We publish easy-to-read informational content around driver basics, update awareness, compatibility guidance, and general troubleshooting knowledge so everyday users can explore these topics with more confidence.',
-    },
-    {
-      title: 'Our Mission',
-      text: 'Our mission is to make driver-related information easier to understand for everyday users by reducing confusion and presenting technical topics in a more practical and approachable way.',
-    },
-    {
-      title: 'Our Vision',
-      text: 'Our vision is to become a trusted informational destination for users seeking clear and reliable content about device drivers and related support topics.',
-    },
-  ];
-
-  const audience = [
-    'Everyday computer users',
-    'Home users trying to understand device behavior',
-    'Students learning about system functionality',
-    'Office users using connected devices',
-    'Readers looking for update information',
-  ];
-
-  const devices = [
-    'Printers',
-    'Graphics cards',
-    'Audio devices',
-    'Wi-Fi adapters',
-    'USB devices',
-    'Scanners',
-    'Motherboards',
-    'Keyboards & Mice',
+    { title: 'Display', icon: Monitor },
+    { title: 'Printer', icon: Printer },
+    { title: 'Network', icon: Wifi },
   ];
 
   return (
-    <div className="bg-[#fafbfc] min-h-screen pt-28 pb-20 font-['Poppins'] overflow-hidden relative">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-50/40 rounded-full blur-[120px] -mr-96 -mt-96 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-50/30 rounded-full blur-[100px] -ml-40 -mb-40 pointer-events-none" />
+    <div className="bg-white min-h-screen font-['Poppins'] text-[#111827] overflow-hidden">
+      
+      {/* Top Blue Banner */}
+      <section className="relative bg-[#1295ea] py-20 md:py-24 text-center overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,white,transparent_35%)]"></div>
+        <div className="relative z-10 px-6">
+          <h1 className="text-white text-[42px] md:text-[56px] font-light mb-4">
+            About Us
+          </h1>
+          <p className="text-white/90 text-[15px] md:text-[17px] max-w-[650px] mx-auto leading-8">
+            A simple educational space for learning how drivers help computers,
+            hardware, and connected devices work together.
+          </p>
+        </div>
+      </section>
 
-      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10">
-        
-        {/* Hero Section */}
-        <section className="mb-20">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[10px]  uppercase mb-6 border border-blue-100/50">
-                Informational Platform
-              </div>
-              
-              <h1 className="text-4xl md:text-3xl lg:text-4xl  text-zinc-900 leading-[1.1] mb-6">
-                What is <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600">Get Your Driver?</span>
-              </h1>
+      {/* Our Story */}
+      <section className="relative pt-20 pb-10 px-6 md:px-12 lg:px-24 text-center">
+        <div className="max-w-[900px] mx-auto">
+          <h2 className="text-[34px] md:text-[42px] font-normal mb-4">
+            Our Story
+          </h2>
+          <div className="w-[90px] h-[3px] bg-[#1295ea] mx-auto mb-7"></div>
 
-              <div className="space-y-5 text-zinc-600 text-base md:text-lg  leading-relaxed max-w-2xl">
-                <p>
-                  Get Your Driver is an informational website dedicated to helping
-                  users understand drivers, updates, compatibility, and common
-                  device-related topics through simple, clear, and educational content.
-                </p>
-                <p>
-                  Our platform is built for readers who want approachable explanations
-                  without overly technical language. We focus on awareness, clarity,
-                  and structured learning.
-                </p>
-              </div>
+          <p className="text-[#5f6b7a] text-[16px] leading-8 mb-6">
+            Lappy Tutor was created to make driver information easier to
+            understand. Many people use computers every day, but driver-related
+            topics can feel confusing because they are often explained in a very
+            technical way.
+          </p>
 
-              <div className="mt-10 flex flex-wrap items-center gap-4">
-                <Link
-                  to="/contact"
-                  className="group relative px-8 py-3.5 bg-zinc-900 text-white rounded-xl  transition-all hover:bg-blue-600 hover:shadow-[0_15px_30px_-5px_rgba(37,99,235,0.3)] active:scale-95"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Contact Us
-                    <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Link>
+          <p className="text-[#5f6b7a] text-[16px] leading-8">
+            Our goal is to explain these topics in a clear and human way. We focus
+            on educational content about driver basics, updates, compatibility,
+            and common device behavior so readers can learn what happens behind
+            the scenes without feeling overwhelmed.
+          </p>
+        </div>
+      </section>
 
-                <Link
-                  to="/"
-                  className="flex items-center gap-2 text-zinc-600 hover:text-zinc-900  text-xs uppercase transition-all"
-                >
-                  Back to Home
-                  <ChevronRight size={16} />
-                </Link>
-              </div>
-            </div>
+      {/* Large Illustration Style Area */}
+      <section className="relative pt-8 pb-20 overflow-hidden">
+        <div className="max-w-[1500px] mx-auto px-6">
+          <div className="relative min-h-[430px] flex items-end justify-center">
+            <div className="absolute bottom-0 left-0 right-0 h-[6px] bg-[#1295ea] rounded-full"></div>
 
-            <div className="lg:col-span-5 relative">
-              <div className="grid grid-cols-2 gap-3">
-                {topics.map((item, i) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={i}
-                      className={`group p-6 rounded-2xl border border-zinc-100 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-md ${
-                        i % 3 === 0 ? 'bg-blue-50/20' : ''
-                      }`}
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                        <Icon size={20} strokeWidth={1.5} />
-                      </div>
-                      <p className="text-[13px] font-black text-zinc-900 uppercase">
-                        {item.title}
-                      </p>
+            <div className="w-full grid grid-cols-2 md:grid-cols-6 gap-6 items-end text-[#1295ea]">
+              {topics.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={index}
+                    className={`flex flex-col items-center justify-end ${
+                      index % 2 === 0 ? 'pb-16' : 'pb-28'
+                    }`}
+                  >
+                    <div className="w-[96px] h-[96px] md:w-[120px] md:h-[120px] rounded-full border-[3px] border-[#1295ea] flex items-center justify-center bg-white shadow-sm mb-5">
+                      <Icon size={44} strokeWidth={1.8} />
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Bento Grid: Philosophy */}
-        <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
-          <div className="md:col-span-2 lg:col-span-2 p-8 rounded-3xl bg-white border border-zinc-100 shadow-sm flex flex-col justify-center">
-            <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px]  uppercase mb-4">
-              Our Vision
-            </div>
-            <h3 className="text-2xl md:text-3xl  text-zinc-900 mb-4 leading-tight">
-              Built for clarity, not confusion.
-            </h3>
-            <p className="text-zinc-600 text-base font-medium leading-relaxed">
-              We aim to make driver-related content easier to explore by keeping the
-              language readable and the focus centered on awareness.
-            </p>
-          </div>
-
-          {contentBlocks.slice(0, 2).map((item, i) => (
-            <div key={i} className="p-8 rounded-3xl bg-white border border-zinc-100 shadow-sm transition-all hover:border-blue-200">
-              <div className="w-10 h-10 rounded-xl bg-zinc-50 flex items-center justify-center text-blue-600 mb-6">
-                <Zap size={20} strokeWidth={1.5} />
-              </div>
-              <h4 className="text-lg  text-zinc-900 mb-3 uppercase">{item.title}</h4>
-              <p className="text-zinc-600 text-[14px] leading-relaxed ">{item.text}</p>
-            </div>
-          ))}
-        </section>
-
-        {/* Second Bento Row */}
-        <section className="grid lg:grid-cols-3 gap-5 mb-20">
-          <div className="lg:col-span-2 grid md:grid-cols-2 gap-5">
-            {contentBlocks.slice(2).map((item, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-white border border-zinc-100 shadow-sm transition-all hover:border-blue-200">
-                <div className="w-10 h-10 rounded-xl bg-zinc-50 flex items-center justify-center text-blue-600 mb-6">
-                  <Activity size={20} strokeWidth={1.5} />
-                </div>
-                <h4 className="text-lg  text-zinc-900 mb-3 uppercase">{item.title}</h4>
-                <p className="text-zinc-600 text-[14px] leading-relaxed ">{item.text}</p>
-              </div>
-            ))}
-          </div>
-          
-          <div className="p-8 rounded-3xl bg-zinc-900 text-white shadow-xl overflow-hidden relative group">
-            <div className="absolute top-0 right-0 p-4 opacity-5 rotate-12 transition-transform group-hover:scale-125 duration-700">
-              <Cpu size={100} />
-            </div>
-            <div className="relative z-10">
-              <p className="text-[10px]  uppercase text-blue-400 mb-6">Audience</p>
-              <h3 className="text-xl  mb-6 leading-tight">Who It Is For</h3>
-              <div className="space-y-3">
-                {audience.map((item, i) => (
-                  <div key={i} className="flex items-start gap-2">
-                    <CheckCircle2 size={14} className="text-blue-500 shrink-0 mt-1" />
-                    <p className="text-zinc-400 text-[13px] font-medium leading-relaxed">{item}</p>
+                    <p className="text-[#111827] text-[14px] md:text-[16px] font-medium">
+                      {item.title}
+                    </p>
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Why Drivers Matter Section */}
-        <section className="mb-20">
-          <div className="rounded-[2.5rem] bg-white border border-zinc-100 p-10 md:p-12 relative overflow-hidden shadow-sm">
-            <div className="grid lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-5">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-orange-600 text-[10px] uppercase mb-6 border border-orange-100">
-                  Essential Knowledge
+      {/* Three Small Cards */}
+      <section className="bg-[#f7f7f7] py-20 md:py-24 px-6 md:px-12 lg:px-24">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+          {values.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div key={index} className="flex flex-col items-center">
+                <div className="w-[88px] h-[88px] rounded-full bg-white border border-zinc-200 shadow-sm flex items-center justify-center text-[#1295ea] mb-7">
+                  <Icon size={36} strokeWidth={1.7} />
                 </div>
-                <h2 className="text-2xl md:text-3xl  text-zinc-900 leading-tight mb-6">
-                  Why Drivers Matter
-                </h2>
-                <p className="text-zinc-600 text-base font-medium leading-relaxed">
-                  Drivers help systems and hardware work together. They are a key part of how computers function, 
-                  translating commands between the OS and hardware components correctly.
+
+                <h3 className="text-[22px] font-normal mb-4">
+                  {item.title}
+                </h3>
+
+                <p className="text-[#4b5563] text-[15px] leading-7 max-w-[330px] mx-auto">
+                  {item.text}
                 </p>
               </div>
-              
-              <div className="lg:col-span-7">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  {devices.map((item, i) => (
-                    <div key={i} className="p-4 rounded-xl bg-zinc-50 border border-zinc-100 text-center transition-all hover:bg-white hover:border-blue-200 group">
-                      <p className="text-[12px] font-bold text-zinc-600 group-hover:text-blue-600 transition-colors">
-                        {item}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+            );
+          })}
+        </div>
+      </section>
 
-        {/* Final CTA */}
-        <section className="text-center bg-[#fafbfc] rounded-[2.5rem] border border-zinc-100 p-12 md:p-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 to-transparent pointer-events-none" />
-          
-          <div className="relative z-10 max-w-4xl mx-auto">
-            <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center text-blue-600 mx-auto mb-8 border border-zinc-50">
-              <Sparkles size={28} />
-            </div>
-            
-            <h2 className="text-3xl md:text-4xl  text-zinc-900 leading-[1.1] mb-6">
-              Explore driver-related topics <br className="hidden md:block" />
-              with more ease and clarity.
-            </h2>
-            
-            <p className="text-zinc-600 text-base md:text-lg  max-w-2xl mx-auto mb-10">
-              If you would like to connect with us, share feedback, or explore more
-              informational content, visit our contact page.
+      {/* Mission Vision */}
+      <section className="py-22 md:py-28 px-6 md:px-12 lg:px-24 bg-white">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="border border-zinc-100 rounded-[24px] p-8 md:p-10 shadow-sm">
+            <Target className="text-[#1295ea] mb-6" size={36} />
+            <h3 className="text-[28px] font-normal mb-4">Our Mission</h3>
+            <p className="text-[#5f6b7a] text-[16px] leading-8">
+              To make driver-related information simple, readable, and useful for
+              everyday users who want to understand how their devices work.
             </p>
-
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                to="/contact"
-                className="group px-10 py-3.5 bg-zinc-900 text-white rounded-xl  text-sm uppercase transition-all hover:bg-blue-600 shadow-xl active:scale-95"
-              >
-                Contact Us
-              </Link>
-              
-              <Link
-                to="/"
-                className="px-10 py-3.5 bg-white border border-zinc-200 text-zinc-900 rounded-xl  text-sm uppercase transition-all shadow-sm active:scale-95"
-              >
-                Back to Home
-              </Link>
-            </div>
           </div>
-        </section>
 
-      </div>
+          <div className="border border-zinc-100 rounded-[24px] p-8 md:p-10 shadow-sm">
+            <Eye className="text-[#1295ea] mb-6" size={36} />
+            <h3 className="text-[28px] font-normal mb-4">Our Vision</h3>
+            <p className="text-[#5f6b7a] text-[16px] leading-8">
+              To create a clear educational resource where driver basics,
+              compatibility, updates, and device topics are explained without
+              confusing language.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Line */}
+      <section className="bg-[#1295ea] py-16 text-center px-6">
+        <div className="max-w-[900px] mx-auto">
+          <CheckCircle2 className="mx-auto text-white mb-5" size={42} />
+          <h2 className="text-white text-[32px] md:text-[42px] font-light mb-5">
+            Built for Clear Driver Education
+          </h2>
+          <p className="text-white/90 text-[16px] leading-8 max-w-[720px] mx-auto mb-9">
+            Our content is informational only and created to help readers learn
+            about drivers, connected devices, and system behavior in a simple way.
+          </p>
+
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-3 bg-white text-[#1295ea] px-10 py-4 rounded-[4px] font-medium hover:bg-[#f3f8ff] transition"
+          >
+            Contact Us <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
     </div>
   );
 };

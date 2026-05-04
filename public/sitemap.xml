@@ -2,30 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://getyourdriver.shop/</loc>
+    <loc>https://lappytutor.co/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://getyourdriver.shop/about</loc>
+    <loc>https://lappytutor.co/about</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://getyourdriver.shop/blog</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getyourdriver.shop/contact</loc>
+    <loc>https://lappytutor.co/contact</loc>
     <priority>0.8</priority>
   </url>
 
   
 
   <!-- Policies -->
-  <url><loc>https://getyourdriver.shop/privacy-policy</loc><priority>0.3</priority></url>
-  <url><loc>https://getyourdriver.shop/terms-of-service</loc><priority>0.3</priority></url>
-  <url><loc>https://getyourdriver.shop/cookie-policy</loc><priority>0.3</priority></url>
-  <url><loc>https://getyourdriver.shop/disclaimer</loc><priority>0.3</priority></url>
+  <url><loc>https://lappytutor.co/privacy-policy</loc><priority>0.3</priority></url>
+  <url><loc>https://lappytutor.co/terms-of-service</loc><priority>0.3</priority></url>
+  <url><loc>https://lappytutor.co/cookie-policy</loc><priority>0.3</priority></url>
+  <url><loc>https://lappytutor.co/disclaimer</loc><priority>0.3</priority></url>
 </urlset>
 
 

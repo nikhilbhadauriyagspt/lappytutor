@@ -129,9 +129,9 @@ const BlogDetail = () => {
                   <Sparkles size={28} />
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-black text-gray-950 mb-6 ">
+                <h2 className="text-2xl md:text-3xl font-black text-gray-950 mb-6 ">
                   Did this article help you?
-                </h3>
+                </h2>
 
                 <p className="text-gray-500 mb-10 max-w-md mx-auto text-sm md:text-base font-medium">
                   Read more helpful tips and guides about keeping your home appliances in perfect condition.
@@ -156,7 +156,7 @@ const BlogDetail = () => {
       <style
         dangerouslySetInnerHTML={{
           __html: `
-            .blog-content h3 {
+            .blog-content h2 {
               font-size: 1.5rem;
               font-weight: 800;
               color: #111827;

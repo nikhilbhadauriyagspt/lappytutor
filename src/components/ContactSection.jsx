@@ -1,4 +1,4 @@
-import { Mail, ArrowRight, CheckCircle2, MapPin, MessageSquare, Sparkles, Cpu, Phone } from 'lucide-react';
+import { Mail, ArrowRight, CheckCircle2, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
 import { CONTACT_API_URL } from '../config';
 
@@ -19,215 +19,193 @@ const ContactSection = () => {
       email: data.email,
       category: data.category,
       message: data.message,
-      site_origin: window.location.hostname
+      site_origin: window.location.hostname,
     };
 
     try {
       const response = await fetch(CONTACT_API_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
 
       const result = await response.json();
+
       if (result.status === 'success') {
         setIsSubmitting(false);
         setIsSuccess(true);
-        setTimeout(() => setIsSuccess(false), 5000);
         e.target.reset();
+        setTimeout(() => setIsSuccess(false), 5000);
       } else {
-        console.error("Backend Error:", result.message);
         setIsSubmitting(false);
-        alert("Submission failed: " + result.message);
+        alert('Submission failed: ' + result.message);
       }
     } catch (error) {
-      console.error("Submission Error:", error);
+      console.error('Submission Error:', error);
       setIsSubmitting(false);
-      alert("An error occurred. Please try again later.");
+      alert('An error occurred. Please try again later.');
     }
   };
 
   return (
-    <section className="py-24 md:py-32 bg-[#fafbfc] relative overflow-hidden font-['Poppins']" id="contact">
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-50/40 rounded-full blur-[120px] -mr-96 -mt-96 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-50/30 rounded-full blur-[100px] -ml-40 -mb-40 pointer-events-none" />
-
-      {/* Success Toast */}
+    <section id="contact" className="pt-5 bg-white font-['Poppins']">
+      {/* Toast */}
       <div
-        className={`fixed bottom-8 right-8 z-[100] transition-all duration-500 transform ${
+        className={`fixed bottom-8 right-8 z-[100] transition-all duration-500 ${
           isSuccess ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0 pointer-events-none'
         }`}
       >
-        <div className="bg-white border border-blue-100 text-zinc-900 px-6 py-5 rounded-[2rem] shadow-2xl flex items-center gap-4">
-          <div className="w-11 h-11 rounded-2xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-600/20">
+        <div className="bg-white border border-blue-100 text-zinc-900 px-6 py-5 rounded-[18px] shadow-2xl flex items-center gap-4">
+          <div className="w-11 h-11 rounded-full bg-[#1295ea] flex items-center justify-center text-white">
             <CheckCircle2 size={20} />
           </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-black">Message Sent</span>
-            <span className="text-xs text-zinc-600 mt-0.5">We have received your inquiry.</span>
+          <div>
+            <p className="text-sm font-semibold">Message Sent</p>
+            <p className="text-xs text-zinc-500">We have received your message.</p>
           </div>
         </div>
       </div>
 
-      <div className="w-full px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto relative z-10">
-        <div className="grid lg:grid-cols-12 gap-16 xl:gap-24 items-start">
-          
-          {/* Left Side: Information */}
-          <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-3 px-5 py-2 bg-white border border-zinc-200/60 shadow-sm text-blue-600 rounded-2xl mb-8">
-              <MessageSquare size={16} />
-              <span className="text-[11px] font-black uppercase tracking-widest">
-                Contact Hub
-              </span>
-            </div>
+      {/* Hero */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[520px] border-b border-zinc-100">
+        <div className="flex items-center px-6 md:px-12 lg:px-24 py-20">
+          <div className="max-w-[620px]">
+            <h1 className="text-[46px] md:text-[64px] font-normal text-[#111827] leading-tight mb-5">
+              Contact Us
+            </h1>
 
-            <h2 className="text-4xl md:text-4xl  text-zinc-900 mb-8 leading-[1.1] ">
-              Get in touch <br />
-              with our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 italic">expert team.</span>
-            </h2>
+            <div className="w-[110px] h-[4px] bg-[#1295ea] mb-7"></div>
 
-            <p className="text-zinc-600 text-lg md:text-xl font-medium leading-relaxed max-w-xl mb-12">
-              Have questions about driver updates, hardware compatibility, or system issues? Reach out to our team for clear guidance.
+            <p className="text-[#5f6b7a] text-[16px] md:text-[18px] leading-8 mb-10">
+              Have a question about driver topics or how devices work with your computer?
+              Send us your message and we’ll keep the response simple, clear, and informational.
             </p>
 
-            <div className="grid gap-4 sm:grid-cols-1 mb-12">
-              {[
-                { label: 'Email Address', value: 'info@getyourdriver.shop', icon: Mail, type: 'email' },
-                
-              ].map((item, idx) => (
-                <div key={idx} className="group flex items-center gap-6 p-6 bg-white rounded-[2rem] border border-zinc-100 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.04)] hover:border-blue-200">
-                  <div className="w-14 h-14 rounded-2xl bg-zinc-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shrink-0">
-                    <item.icon size={24} strokeWidth={1.5} />
-                  </div>
-                  <div className="overflow-hidden">
-                    <p className="text-[10px] font-black text-zinc-600 uppercase tracking-widest mb-1.5">{item.label}</p>
-                    {item.type === 'email' ? (
-                      <a 
-                        href={`mailto:${item.value}`} 
-                        className="text-base md:text-lg font-bold text-zinc-900 truncate hover:text-blue-600 transition-colors block"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="text-base md:text-lg font-bold text-zinc-900 truncate">
-                        {item.value}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <a
+              href="mailto:info@lappytutor.co"
+              className="inline-flex items-center gap-3 bg-[#1295ea] text-white px-8 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#087ed0] transition"
+            >
+              <Mail size={18} />
+              info@lappytutor.co
+            </a>
+          </div>
+        </div>
 
-            <div className="flex flex-wrap gap-4">
-             
-             
-            </div>
+        <div className="relative bg-[#eaf7ff] min-h-[360px] flex items-center justify-center overflow-hidden">
+          <div className="absolute w-[520px] h-[520px] rounded-full bg-white/70"></div>
+          <MessageSquare size={230} strokeWidth={1.2} className="relative z-10 text-[#1295ea]" />
+          <div className="absolute bottom-0 left-0 right-0 h-[7px] bg-[#1295ea]"></div>
+        </div>
+      </section>
+
+      {/* Form Section */}
+      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-24 bg-[#f7f7f7]">
+        <div className="max-w-[1100px] mx-auto bg-white rounded-[24px] border border-zinc-100 shadow-sm p-6 md:p-10 lg:p-12">
+          <div className="mb-10 text-center">
+            <h2 className="text-[34px] md:text-[42px] font-normal text-[#111827] mb-4">
+              Send a Message
+            </h2>
+            <p className="text-[#5f6b7a] text-[15px] md:text-[16px] leading-7 max-w-[650px] mx-auto">
+              Share your question or topic below. This form is for general driver
+              information and educational inquiries only.
+            </p>
           </div>
 
-          {/* Right Side: Form */}
-          <div className="lg:col-span-7 pt-4">
-            <div className="relative rounded-[3rem] border border-zinc-200 bg-white/60 backdrop-blur-xl p-8 md:p-12 shadow-[0_30px_100px_-20px_rgba(0,0,0,0.04)] overflow-hidden">
-              <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600" />
-              
-              <div className="mb-12">
-                <h3 className="text-3xl  text-zinc-900  mb-4">
-                  Send a message
-                </h3>
-                <p className="text-zinc-600 text-base font-medium leading-relaxed">
-                  Fill out the form below with your details and the issue you're facing. Our team will review your message and get back to you shortly.
-                </p>
+          <form className="space-y-7" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+              <div>
+                <label className="block text-[12px] uppercase tracking-[0.18em] text-zinc-500 mb-3">
+                  First Name
+                </label>
+                <input
+                  required
+                  name="firstName"
+                  type="text"
+                  placeholder="Your first name"
+                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1295ea] transition"
+                />
               </div>
 
-              <form className="space-y-8" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-2 group">
-                    <label className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.2em] ml-1 group-focus-within:text-blue-600 transition-colors">First Name</label>
-                    <input
-                      required
-                      name="firstName"
-                      type="text"
-                      className="w-full bg-zinc-50 border border-transparent px-6 py-5 rounded-2xl focus:bg-white focus:border-blue-200 focus:ring-4 focus:ring-blue-50 outline-none transition-all font-bold text-zinc-900 placeholder:text-zinc-300"
-                      placeholder="Your first name"
-                    />
-                  </div>
-                  <div className="space-y-2 group">
-                    <label className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.2em] ml-1 group-focus-within:text-blue-600 transition-colors">Last Name</label>
-                    <input
-                      required
-                      name="lastName"
-                      type="text"
-                      className="w-full bg-zinc-50 border border-transparent px-6 py-5 rounded-2xl focus:bg-white focus:border-blue-200 focus:ring-4 focus:ring-blue-50 outline-none transition-all font-bold text-zinc-900 placeholder:text-zinc-300"
-                      placeholder="Your last name"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-2 group">
-                    <label className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.2em] ml-1 group-focus-within:text-blue-600 transition-colors">Email Address</label>
-                    <input
-                      required
-                      name="email"
-                      type="email"
-                      className="w-full bg-zinc-50 border border-transparent px-6 py-5 rounded-2xl focus:bg-white focus:border-blue-200 focus:ring-4 focus:ring-blue-50 outline-none transition-all font-bold text-zinc-900 placeholder:text-zinc-300"
-                      placeholder="name@example.com"
-                    />
-                  </div>
-                  <div className="space-y-2 group">
-                    <label className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.2em] ml-1 group-focus-within:text-blue-600 transition-colors">Problem Category</label>
-                    <div className="relative">
-                      <select
-                        required
-                        name="category"
-                        className="w-full bg-zinc-50 border border-transparent px-6 py-5 rounded-2xl focus:bg-white focus:border-blue-200 focus:ring-4 focus:ring-blue-50 outline-none transition-all font-bold text-zinc-900 appearance-none"
-                      >
-                        <option value="" disabled selected>Select a category</option>
-                        <option value="Graphics">Graphics / Display</option>
-                        <option value="Audio">Audio / Sound</option>
-                        <option value="Network">Network / Wi-Fi</option>
-                        <option value="Storage">Storage / HDD / SSD</option>
-                        <option value="Peripheral">Printers / Scanners</option>
-                        <option value="Security">Security / TPM</option>
-                        <option value="Other">Other Issues</option>
-                      </select>
-                      <ArrowRight size={18} className="absolute right-6 top-1/2 -translate-y-1/2 rotate-90 text-zinc-600 pointer-events-none" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-2 group">
-                  <label className="text-[10px] font-black text-zinc-600 uppercase tracking-[0.2em] ml-1 group-focus-within:text-blue-600 transition-colors">Your Message</label>
-                  <textarea
-                    required
-                    name="message"
-                    rows="4"
-                    className="w-full bg-zinc-50 border border-transparent px-6 py-5 rounded-2xl focus:bg-white focus:border-blue-200 focus:ring-4 focus:ring-blue-50 outline-none transition-all font-bold text-zinc-900 resize-none placeholder:text-zinc-300"
-                    placeholder="How can we help you?"
-                  />
-                </div>
-
-                <button
-                  disabled={isSubmitting}
-                  className="w-full py-6 bg-zinc-900 text-white rounded-[1.5rem] font-black text-xs uppercase tracking-[0.2em] hover:bg-blue-600 transition-all shadow-2xl shadow-zinc-900/20 active:scale-[0.98] flex items-center justify-center gap-4 disabled:opacity-50 group"
-                >
-                  {isSubmitting ? (
-                    <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
-                  ) : (
-                    <>
-                      Submit Message
-                      <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
-                    </>
-                  )}
-                </button>
-              </form>
+              <div>
+                <label className="block text-[12px] uppercase tracking-[0.18em] text-zinc-500 mb-3">
+                  Last Name
+                </label>
+                <input
+                  required
+                  name="lastName"
+                  type="text"
+                  placeholder="Your last name"
+                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1295ea] transition"
+                />
+              </div>
             </div>
-          </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+              <div>
+                <label className="block text-[12px] uppercase tracking-[0.18em] text-zinc-500 mb-3">
+                  Email Address
+                </label>
+                <input
+                  required
+                  name="email"
+                  type="email"
+                  placeholder="name@example.com"
+                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1295ea] transition"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[12px] uppercase tracking-[0.18em] text-zinc-500 mb-3">
+                  Topic Category
+                </label>
+                <select
+                  required
+                  name="category"
+                  defaultValue=""
+                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1295ea] transition"
+                >
+                  <option value="" disabled>Select a category</option>
+                  <option value="Graphics">Graphics / Display</option>
+                  <option value="Audio">Audio / Sound</option>
+                  <option value="Network">Network / Wi-Fi</option>
+                  <option value="Storage">Storage / Drives</option>
+                  <option value="Peripheral">Printers / Scanners</option>
+                  <option value="Security">Security Drivers</option>
+                  <option value="Other">Other Topic</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-[12px] uppercase tracking-[0.18em] text-zinc-500 mb-3">
+                Your Message
+              </label>
+              <textarea
+                required
+                name="message"
+                rows="5"
+                placeholder="Write your question or topic here..."
+                className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1295ea] transition resize-none"
+              />
+            </div>
+
+            <button
+              disabled={isSubmitting}
+              aria-label="Contact form for general driver information"
+              className="w-full md:w-auto inline-flex items-center justify-center gap-3 bg-[#1295ea] text-white px-12 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#087ed0] transition disabled:opacity-60"
+            >
+              {isSubmitting ? (
+                <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              ) : (
+                <>
+                  Submit Message
+                  <ArrowRight size={18} />
+                </>
+              )}
+            </button>
+          </form>
         </div>
-      </div>
+      </section>
     </section>
   );
 };

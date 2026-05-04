@@ -26,19 +26,19 @@ const TermsOfService = () => {
           <section className="space-y-6">
             <h2 className="text-xl font-black text-zinc-900 uppercase">AGREEMENT TO OUR LEGAL TERMS</h2>
             <p>
-              We are <strong>Get Your Driver</strong> ("Company," "we," "us," or "our").
+              We are <strong>Lappy Tutor</strong> ("Company," "we," "us," or "our").
             </p>
             <p>
-              We operate the website <a href="http://getyourdriver.shop/" className="text-blue-600 font-bold hover:underline">http://getyourdriver.shop/</a> (the "Site"), as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").
+              We operate the website <a href="http://lappytutor.co/" className="text-blue-600 font-bold hover:underline">http://lappytutor.co/</a> (the "Site"), as well as any other related products and services that refer or link to these legal terms (the "Legal Terms") (collectively, the "Services").
             </p>
             <p>
-              Get Your Driver was founded on the principle that hardware repairs and optimizations should be handled with the same level of precision as industrial maintenance. We recognize that modern hardware components are complex electronic systems that require specialized knowledge and calibrated tools for effective servicing.
+              Lappy Tutor was founded on the principle that hardware repairs and optimizations should be handled with the same level of precision as industrial maintenance. We recognize that modern hardware components are complex electronic systems that require specialized knowledge and calibrated tools for effective servicing.
             </p>
             <p>
-              You can contact us by email at <a href="mailto:info@getyourdriver.shop" className="text-blue-600 font-bold hover:underline">info@getyourdriver.shop</a>.
+              You can contact us by email at <a href="mailto:info@lappytutor.co" className="text-blue-600 font-bold hover:underline">info@lappytutor.co</a>.
             </p>
             <p>
-              These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and Get Your Driver, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.
+              These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you"), and Lappy Tutor, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.
             </p>
             <p>
               Supplemental terms and conditions or documents that may be posted on the Services from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Legal Terms at any time and for any reason. We will alert you about any changes by updating the "Last updated" date of these Legal Terms, and you waive any right to receive specific notice of each such change. It is your responsibility to periodically review these Legal Terms to stay informed of updates. You will be subject to, and will be deemed to have been made aware of and to have accepted, the changes in any revised Legal Terms by your continued use of the Services after the date such revised Legal Terms are posted.
@@ -96,7 +96,7 @@ const TermsOfService = () => {
               </ul>
               <p>solely for your personal, non-commercial use or internal business purpose.</p>
               <p>Except as set out in this section or elsewhere in our Legal Terms, no part of the Services and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.</p>
-              <p>If you wish to make any use of the Services, Content, or Marks other than as set out in this section or elsewhere in our Legal Terms, please address your request to: <a href="mailto:info@getyourdriver.shop" className="text-blue-600 font-bold hover:underline">info@getyourdriver.shop</a>. If we ever grant you the permission to post, reproduce, or publicly display any part of our Services or Content, you must identify us as the owners or licensors of the Services, Content, or Marks and ensure that any copyright or proprietary notice appears or is visible on posting, reproducing, or displaying our Content.</p>
+              <p>If you wish to make any use of the Services, Content, or Marks other than as set out in this section or elsewhere in our Legal Terms, please address your request to: <a href="mailto:info@lappytutor.co" className="text-blue-600 font-bold hover:underline">info@lappytutor.co</a>. If we ever grant you the permission to post, reproduce, or publicly display any part of our Services or Content, you must identify us as the owners or licensors of the Services, Content, or Marks and ensure that any copyright or proprietary notice appears or is visible on posting, reproducing, or displaying our Content.</p>
               <p>We reserve all rights not expressly granted to you in and to the Services, Content, and Marks.</p>
               <p>Any breach of these Intellectual Property Rights will constitute a material breach of our Legal Terms and your right to use our Services will terminate immediately.</p>
               <p><strong>Your submissions</strong></p>
@@ -184,7 +184,7 @@ const TermsOfService = () => {
 
             <section id="8" className="space-y-6">
               <h3 className="text-xl font-black text-zinc-900 uppercase border-b border-zinc-100 pb-4">8. PRIVACY POLICY</h3>
-              <p>We care about data privacy and security. Please review our Privacy Policy: <a href="http://getyourdriver.shop/privacy-policy" className="text-blue-600 font-bold hover:underline">http://getyourdriver.shop/privacy-policy</a>. By using the Services, you agree to be bound by our Privacy Policy, which is incorporated into these Legal Terms. Please be advised the Services are hosted in the United States. If you access the Services from any other region of the world with laws or other requirements governing personal data collection, use, or disclosure that differ from applicable laws in the United States, then through your continued use of the Services, you are transferring your data to the United States, and you expressly consent to have your data transferred to and processed in the United States.</p>
+              <p>We care about data privacy and security. Please review our Privacy Policy: <a href="http://lappytutor.co/privacy-policy" className="text-blue-600 font-bold hover:underline">http://lappytutor.co/privacy-policy</a>. By using the Services, you agree to be bound by our Privacy Policy, which is incorporated into these Legal Terms. Please be advised the Services are hosted in the United States. If you access the Services from any other region of the world with laws or other requirements governing personal data collection, use, or disclosure that differ from applicable laws in the United States, then through your continued use of the Services, you are transferring your data to the United States, and you expressly consent to have your data transferred to and processed in the United States.</p>
             </section>
 
             <section id="9" className="space-y-6">
@@ -250,10 +250,10 @@ const TermsOfService = () => {
                 In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at:
               </p>
               <p className="text-2xl font-black mb-8">
-                <a href="mailto:info@getyourdriver.shop" className="text-white hover:text-blue-400 transition-colors underline">info@getyourdriver.shop</a>
+                <a href="mailto:info@lappytutor.co" className="text-white hover:text-blue-400 transition-colors underline">info@lappytutor.co</a>
               </p>
               <p className="text-zinc-500 text-[10px] font-black uppercase tracking-[0.2em]">
-                Get Your Driver &bull; Legal Affairs Division
+                Lappy Tutor &bull; Legal Affairs Division
               </p>
             </section>
           </div>
