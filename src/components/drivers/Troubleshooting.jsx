@@ -30,7 +30,7 @@ const Troubleshooting = () => {
             return (
               <div key={index} className="flex flex-col items-center">
                 <div className="w-[132px] h-[132px] rounded-full bg-white border border-zinc-200 shadow-sm flex items-center justify-center mb-9">
-                  <Icon size={58} strokeWidth={1.6} className="text-[#1295ea]" />
+                  <Icon size={58} strokeWidth={1.6} className="text-[#1075b8]" />
                 </div>
 
                 <h2 className="text-[24px] md:text-[26px] font-normal text-[#111827] mb-5">

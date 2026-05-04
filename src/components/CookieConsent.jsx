@@ -35,7 +35,7 @@ const CookieConsent = () => {
           
           {/* Content Side */}
           <div className="flex items-center gap-4 flex-1">
-            <div className="hidden sm:flex w-10 h-10 rounded-full bg-blue-50 shrink-0 items-center justify-center text-[#1295ea]">
+            <div className="hidden sm:flex w-10 h-10 rounded-full bg-blue-50 shrink-0 items-center justify-center text-[#1075b8]">
               <Cookie size={20} />
             </div>
             <div>
@@ -43,9 +43,9 @@ const CookieConsent = () => {
                 <strong className="text-[#111827] mr-1">Privacy Optimization:</strong>
                 We use cookies to synchronize your experience and analyze our diagnostic traffic. 
                 By continuing to explore, you agree to our 
-                <Link to="/cookie-policy" className="text-[#1295ea] hover:underline mx-1">Cookie Policy</Link>
+                <Link to="/cookie-policy" className="text-[#1075b8] hover:underline mx-1">Cookie Policy</Link>
                 and 
-                <Link to="/privacy-policy" className="text-[#1295ea] hover:underline mx-1">Privacy Terms</Link>.
+                <Link to="/privacy-policy" className="text-[#1075b8] hover:underline mx-1">Privacy Terms</Link>.
               </p>
             </div>
           </div>
@@ -65,7 +65,7 @@ const CookieConsent = () => {
             </button>
             <button
               onClick={handleAccept}
-              className="flex-1 md:flex-none px-8 py-2.5 bg-[#1295ea] text-white rounded-[4px] text-[12px] font-medium hover:bg-[#0879bd] transition-colors whitespace-nowrap"
+              className="flex-1 md:flex-none px-8 py-2.5 bg-[#1075b8] text-white rounded-[4px] text-[12px] font-medium hover:bg-[#0769a3] transition-colors whitespace-nowrap"
             >
               Accept All
             </button>

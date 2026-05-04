@@ -193,7 +193,7 @@ const AllAboutDrivers = () => {
       <CategoryOverview onAction={() => { }} />
       <AboutSection />
       {/* Why Drivers Matter */}
-      <section className="w-full bg-white overflow-hidden border-t-[3px] border-[#1594ee]">
+      <section className="w-full bg-white overflow-hidden border-t-[3px] border-[#1075b8]">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[720px]">
           <div className="relative h-[420px] lg:h-auto">
             <img
@@ -210,9 +210,9 @@ const AllAboutDrivers = () => {
                 Why Drivers Matter
               </h2>
 
-              <div className="w-[115px] h-[4px] bg-[#1594ee] mb-6"></div>
+              <div className="w-[115px] h-[4px] bg-[#1075b8] mb-6"></div>
 
-              <p className="text-[#7b8491] text-[15px] md:text-[16px] leading-7 mb-12 max-w-[520px]">
+              <p className="text-[#525b64] text-[15px] md:text-[16px] leading-7 mb-12 max-w-[520px]">
                 Drivers work quietly in the background to help your computer and hardware
                 understand each other. They make everyday functions like sound, display,
                 internet, printing, and device connection work smoothly.
@@ -240,7 +240,7 @@ const AllAboutDrivers = () => {
 
                   return (
                     <div key={idx} className="flex gap-7 items-start">
-                      <div className="w-[58px] shrink-0 pt-1 text-[#1594ee]">
+                      <div className="w-[58px] shrink-0 pt-1 text-[#1075b8]">
                         <Icon size={54} strokeWidth={1.4} />
                       </div>
 
@@ -259,7 +259,7 @@ const AllAboutDrivers = () => {
 
               <Link
                 to="/contact"
-                className="inline-flex bg-[#1295ea] text-white px-10 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#087ed0] transition"
+                className="inline-flex bg-[#1075b8] text-white px-10 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#0a6ea3] transition"
               >
                 Contact Us
               </Link>
@@ -280,9 +280,9 @@ const AllAboutDrivers = () => {
             Driver Categories
           </h2>
 
-          <div className="w-[115px] h-[4px] bg-[#1594ee] mx-auto mb-5"></div>
+          <div className="w-[115px] h-[4px] bg-[#1075b8] mx-auto mb-5"></div>
 
-          <p className="text-[#7b8491] text-[15px] md:text-[16px] leading-7 max-w-[580px] mx-auto mb-12">
+          <p className="text-[#525b64] text-[15px] md:text-[16px] leading-7 max-w-[580px] mx-auto mb-12">
             Explore different driver types in a simple way and understand how each one
             helps your computer, hardware, and connected devices work together.
           </p>
@@ -297,8 +297,8 @@ const AllAboutDrivers = () => {
                     key={tab.id}
                     onClick={() => setActiveType(tab.id)}
                     className={`px-7 py-3 rounded-full text-sm font-medium whitespace-nowrap transition ${isActive
-                        ? 'bg-[#1295ea] text-white shadow-md'
-                        : 'text-zinc-600 hover:text-[#1295ea]'
+                        ? 'bg-[#1075b8] text-white shadow-md'
+                        : 'text-zinc-600 hover:text-[#1075b8]'
                       }`}
                   >
                     {tab.label}
@@ -323,7 +323,7 @@ const AllAboutDrivers = () => {
 
                 <div className="p-7">
                   <h3
-                    className={`text-[22px] font-normal leading-snug mb-4 ${index === 1 ? 'text-[#1594ee]' : 'text-[#333]'
+                    className={`text-[22px] font-normal leading-snug mb-4 ${index === 1 ? 'text-[#1075b8]' : 'text-[#333]'
                       }`}
                   >
                     {item.title}
@@ -345,13 +345,13 @@ const AllAboutDrivers = () => {
       <FAQSection />
 
       {/* CTA Section */}
-      <section className="w-full bg-[#1594ee] py-20 md:py-24 font-['Poppins'] text-center overflow-hidden">
+      <section className="w-full bg-[#1075b8] py-20 md:py-24 font-['Poppins'] text-center overflow-hidden">
         <div className="max-w-[1100px] mx-auto px-6">
           <h2 className="text-white text-[38px] md:text-[48px] font-light leading-tight mb-6">
             Learn More About Drivers in a Simple Way
           </h2>
 
-          <p className="text-white/95 text-[15px] md:text-[17px] leading-8 max-w-[760px] mx-auto mb-10">
+          <p className="text-white text-[15px] md:text-[17px] leading-8 max-w-[760px] mx-auto mb-10">
             Explore easy driver information created to help you understand how your
             computer connects with sound, display, internet, printers, and other
             devices.
@@ -359,7 +359,7 @@ const AllAboutDrivers = () => {
 
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center bg-white text-[#1295ea] px-12 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#f3f8ff] transition"
+            className="inline-flex items-center justify-center bg-white text-[#1075b8] px-12 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#f3f8ff] transition"
           >
             CONTACT US
           </Link>

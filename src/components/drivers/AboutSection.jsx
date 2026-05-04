@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const AboutSection = () => {
   return (
-    <section className="w-full bg-white overflow-hidden font-['Poppins'] border-t-[3px] border-[#1594ee]">
+    <section className="w-full bg-white overflow-hidden font-['Poppins'] border-t-[3px] border-[#1075b8]">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[720px]">
 
         {/* Left Content */}
@@ -14,9 +14,9 @@ const AboutSection = () => {
               About Us
             </h2>
 
-            <div className="w-[115px] h-[4px] bg-[#1295ea] mb-6"></div>
+            <div className="w-[115px] h-[4px] bg-[#1075b8] mb-6"></div>
 
-            <p className="text-[#7b8491] text-[15px] md:text-[16px] leading-7 mb-10 max-w-[520px]">
+            <p className="text-[#525b64] text-[15px] md:text-[16px] leading-7 mb-10 max-w-[520px]">
               Lappy Tutor is an educational website created to explain driver
               topics in a simple and readable way. Our goal is to help users
               understand how drivers support everyday computer functions.
@@ -40,7 +40,7 @@ const AboutSection = () => {
 
             <Link
               to="/about"
-              className="inline-flex bg-[#1295ea] text-white px-10 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#087ed0] transition"
+              className="inline-flex bg-[#1075b8] text-white px-10 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#0a6ea3] transition"
             >
               Learn more about Lappy Tutor
             </Link>
@@ -54,7 +54,7 @@ const AboutSection = () => {
             alt="Driver education and computer learning"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-[#1295ea]/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-[#1075b8]/20"></div>
         </div>
 
       </div>

@@ -47,8 +47,14 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className="font-sans selection:bg-blue-50 selection:text-blue-600 bg-white min-h-screen flex flex-col">
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#1075b8] focus:text-white focus:px-4 focus:py-2 focus:rounded-[4px] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1075b8]"
+        >
+          Skip to content
+        </a>
         <Header />
-        <main className="flex-grow">
+        <main id="main-content" className="flex-grow">
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Home />} />

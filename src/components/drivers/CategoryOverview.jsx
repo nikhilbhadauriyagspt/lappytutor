@@ -14,9 +14,9 @@ const CategoryOverview = () => {
             Understanding the Different Types of Drivers That Keep Your System Running
           </h1>
 
-          <div className="w-[110px] h-[4px] bg-[#1594ee] mb-5"></div>
+          <div className="w-[110px] h-[4px] bg-[#1075b8] mb-5"></div>
 
-          <p className="text-[#7b8491] text-[15px] leading-7 max-w-[460px]">
+          <p className="text-[#525b64] text-[15px] leading-7 max-w-[460px]">
             Every computer depends on different types of drivers working quietly in the background. 
             These drivers help your system connect with hardware and make sure everything runs smoothly.
           </p>

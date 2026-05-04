@@ -56,7 +56,7 @@ const ContactSection = () => {
         }`}
       >
         <div className="bg-white border border-blue-100 text-zinc-900 px-6 py-5 rounded-[18px] shadow-2xl flex items-center gap-4">
-          <div className="w-11 h-11 rounded-full bg-[#1295ea] flex items-center justify-center text-white">
+          <div className="w-11 h-11 rounded-full bg-[#1075b8] flex items-center justify-center text-white">
             <CheckCircle2 size={20} />
           </div>
           <div>
@@ -74,7 +74,7 @@ const ContactSection = () => {
               Contact Us
             </h1>
 
-            <div className="w-[110px] h-[4px] bg-[#1295ea] mb-7"></div>
+            <div className="w-[110px] h-[4px] bg-[#1075b8] mb-7"></div>
 
             <p className="text-[#5f6b7a] text-[16px] md:text-[18px] leading-8 mb-10">
               Have a question about driver topics or how devices work with your computer?
@@ -83,7 +83,7 @@ const ContactSection = () => {
 
             <a
               href="mailto:info@lappytutor.co"
-              className="inline-flex items-center gap-3 bg-[#1295ea] text-white px-8 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#087ed0] transition"
+              className="inline-flex items-center gap-3 bg-[#1075b8] text-white px-8 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#0a6ea3] transition"
             >
               <Mail size={18} />
               info@lappytutor.co
@@ -93,8 +93,8 @@ const ContactSection = () => {
 
         <div className="relative bg-[#eaf7ff] min-h-[360px] flex items-center justify-center overflow-hidden">
           <div className="absolute w-[520px] h-[520px] rounded-full bg-white/70"></div>
-          <MessageSquare size={230} strokeWidth={1.2} className="relative z-10 text-[#1295ea]" />
-          <div className="absolute bottom-0 left-0 right-0 h-[7px] bg-[#1295ea]"></div>
+          <MessageSquare size={230} strokeWidth={1.2} className="relative z-10 text-[#1075b8]" />
+          <div className="absolute bottom-0 left-0 right-0 h-[7px] bg-[#1075b8]"></div>
         </div>
       </section>
 
@@ -122,7 +122,7 @@ const ContactSection = () => {
                   name="firstName"
                   type="text"
                   placeholder="Your first name"
-                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1295ea] transition"
+                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1075b8] transition"
                 />
               </div>
 
@@ -135,7 +135,7 @@ const ContactSection = () => {
                   name="lastName"
                   type="text"
                   placeholder="Your last name"
-                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1295ea] transition"
+                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1075b8] transition"
                 />
               </div>
             </div>
@@ -150,7 +150,7 @@ const ContactSection = () => {
                   name="email"
                   type="email"
                   placeholder="name@example.com"
-                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1295ea] transition"
+                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1075b8] transition"
                 />
               </div>
 
@@ -162,7 +162,7 @@ const ContactSection = () => {
                   required
                   name="category"
                   defaultValue=""
-                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1295ea] transition"
+                  className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1075b8] transition"
                 >
                   <option value="" disabled>Select a category</option>
                   <option value="Graphics">Graphics / Display</option>
@@ -185,14 +185,14 @@ const ContactSection = () => {
                 name="message"
                 rows="5"
                 placeholder="Write your question or topic here..."
-                className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1295ea] transition resize-none"
+                className="w-full bg-[#f7f7f7] border border-zinc-200 px-5 py-4 rounded-[10px] outline-none focus:border-[#1075b8] transition resize-none"
               />
             </div>
 
             <button
               disabled={isSubmitting}
               aria-label="Contact form for general driver information"
-              className="w-full md:w-auto inline-flex items-center justify-center gap-3 bg-[#1295ea] text-white px-12 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#087ed0] transition disabled:opacity-60"
+              className="w-full md:w-auto inline-flex items-center justify-center gap-3 bg-[#1075b8] text-white px-12 py-4 rounded-[4px] font-medium shadow-md hover:bg-[#0a6ea3] transition disabled:opacity-60"
             >
               {isSubmitting ? (
                 <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

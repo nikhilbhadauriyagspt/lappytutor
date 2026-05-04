@@ -154,8 +154,8 @@ const Header = () => {
                 to={link.path}
                 className={`transition ${
                   location.pathname === link.path
-                    ? 'text-[#1295ea]'
-                    : 'text-zinc-700 hover:text-[#1295ea]'
+                    ? 'text-[#1075b8]'
+                    : 'text-zinc-700 hover:text-[#1075b8]'
                 }`}
               >
                 {link.name}
@@ -166,7 +166,7 @@ const Header = () => {
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className={`flex items-center gap-1 transition ${
-                  isServicesOpen ? 'text-[#1295ea]' : 'text-zinc-700 hover:text-[#1295ea]'
+                  isServicesOpen ? 'text-[#1075b8]' : 'text-zinc-700 hover:text-[#1075b8]'
                 }`}
               >
                 Drivers
@@ -187,12 +187,12 @@ const Header = () => {
                   {services.map((service, idx) => (
                     <div key={idx}>
                       <div className="flex items-center gap-3 mb-5">
-                        <div className="w-10 h-10 rounded-full border border-blue-100 bg-blue-50 text-[#1295ea] flex items-center justify-center">
+                        <div className="w-10 h-10 rounded-full border border-blue-100 bg-blue-50 text-[#1075b8] flex items-center justify-center">
                           <service.icon size={18} />
                         </div>
 
                         <div>
-                          <h4 className="text-[13px] font-medium text-[#1295ea]">
+                          <h4 className="text-[13px] font-medium text-[#1075b8]">
                             {service.subtitle}
                           </h4>
                           <p className="text-[11px] text-zinc-500">
@@ -209,9 +209,9 @@ const Header = () => {
                             <li key={itemIdx}>
                               <Link
                                 to={item.path}
-                                className="group flex items-center gap-2 text-[13px] text-zinc-600 hover:text-[#1295ea] transition"
+                                className="group flex items-center gap-2 text-[13px] text-zinc-600 hover:text-[#1075b8] transition"
                               >
-                                <ItemIcon size={14} className="text-zinc-400 group-hover:text-[#1295ea]" />
+                                <ItemIcon size={14} className="text-zinc-400 group-hover:text-[#1075b8]" />
                                 <span>{item.name}</span>
                               </Link>
                             </li>
@@ -240,7 +240,8 @@ const Header = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setIsSearchFocused(true)}
               placeholder="Search driver topics..."
-              className="w-full border border-zinc-300 rounded-[6px] py-2.5 pl-10 pr-10 text-[13px] outline-none focus:border-[#1295ea] transition"
+              aria-label="Search driver topics"
+              className="w-full border border-zinc-300 rounded-[6px] py-2.5 pl-10 pr-10 text-[13px] outline-none focus:border-[#1075b8] transition"
             />
 
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400" size={16} />
@@ -248,6 +249,7 @@ const Header = () => {
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
+                aria-label="Clear search"
                 className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-700"
               >
                 <X size={15} />
@@ -271,7 +273,7 @@ const Header = () => {
                       to={item.path}
                       className="flex items-center gap-3 p-3 rounded-[8px] hover:bg-blue-50 transition"
                     >
-                      <div className="w-8 h-8 rounded-full bg-blue-50 text-[#1295ea] flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-full bg-blue-50 text-[#1075b8] flex items-center justify-center">
                         <ItemIcon size={14} />
                       </div>
                       <div>
@@ -288,7 +290,7 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <a
               href="mailto:info@lappytutor.co"
-              className="hidden lg:flex items-center gap-2 text-[13px] text-zinc-700 hover:text-[#1295ea]"
+              className="hidden lg:flex items-center gap-2 text-[13px] text-zinc-700 hover:text-[#1075b8]"
             >
               <Mail size={16} />
               Email Us
@@ -296,13 +298,14 @@ const Header = () => {
 
             <Link
               to="/contact"
-              className="hidden sm:inline-flex bg-[#1295ea] text-white px-6 py-2.5 rounded-[4px] text-[13px] font-medium hover:bg-[#0d83cf] transition"
+              className="hidden sm:inline-flex bg-[#1075b8] text-white px-6 py-2.5 rounded-[4px] text-[13px] font-medium hover:bg-[#0a6ea3] transition"
             >
               Contact Us
             </Link>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               className="xl:hidden w-10 h-10 rounded-[6px] border border-zinc-300 flex items-center justify-center text-zinc-800"
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -321,6 +324,7 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search driver topics..."
+            aria-label="Search driver topics mobile"
             className="w-full border border-zinc-300 rounded-[6px] py-3 px-4 text-[14px] outline-none mb-8"
           />
 
@@ -337,7 +341,7 @@ const Header = () => {
             ))}
 
             <div className="pt-6 border-t border-zinc-100">
-              <h3 className="text-[#1295ea] text-[12px] uppercase tracking-[0.2em] mb-5">
+              <h3 className="text-[#1075b8] text-[12px] uppercase tracking-[0.2em] mb-5">
                 Driver Topics
               </h3>
 
@@ -368,7 +372,7 @@ const Header = () => {
             <Link
               to="/contact"
               onClick={() => setIsMenuOpen(false)}
-              className="inline-flex mt-6 bg-[#1295ea] text-white px-7 py-3 rounded-[4px] text-[14px]"
+              className="inline-flex mt-6 bg-[#1075b8] text-white px-7 py-3 rounded-[4px] text-[14px]"
             >
               Contact Us
             </Link>
