@@ -1,0 +1,22 @@
+# Lappy Tutor
+
+> An educational platform dedicated to helping users understand device drivers and hardware architecture.
+
+## Overview
+Lappy Tutor provides clear, human-readable information about how device drivers act as software bridges between operating systems and hardware components.
+
+## Key Sections
+- **Essential Drivers**: Chipset, Graphics, Audio, Network.
+- **Hardware Drivers**: Storage, USB, Bluetooth, Input Devices.
+- **Peripherals**: Printers, Scanners, Webcams, Monitors.
+- **Advanced**: BIOS/UEFI, Security, Power Management.
+
+## Technical Info
+- **Tech Stack**: React, Vite, Tailwind CSS.
+- **Content Focus**: Driver updates, hardware compatibility, system optimization, and troubleshooting.
+- **Primary URL**: https://lappytutor.co/
+
+## Core Values
+- Simplified technical concepts.
+- Focus on driver awareness and education.
+- Accessible troubleshooting guides.
